@@ -1,1 +1,1 @@
-My trio is not very comfortable with this part. We are not sure when to use non void methods. 
+The rest of my trio is not very comfortable with this part. They did not understand multiple parts. One cause was not understanding when to use non void methods.  
