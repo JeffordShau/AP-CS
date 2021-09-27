@@ -1,1 +1,1 @@
-
+My trio was confused on the coding bat. I was only able to do a few string slicing problems because I 
