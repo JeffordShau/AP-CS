@@ -1,1 +1,1 @@
-MY trio is not very comfortable with this part. We are not sure when to use non void emthods. 
+My trio is not very comfortable with this part. We are not sure when to use non void methods. 
