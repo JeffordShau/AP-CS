@@ -1,1 +1,1 @@
-(list "Hello, world")
+(display "Hello, world")
