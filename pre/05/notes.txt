@@ -1,1 +1,6 @@
+Jefford Shau
+APCS
+HW05 -- Understanding the Summer Pre-work
+2021-09-27
+
 The rest of my trio is not very comfortable with this part. They did not understand multiple parts. One cause was not understanding when to use non void methods.  
