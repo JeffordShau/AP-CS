@@ -1,8 +1,11 @@
+/*
 Jefford Shau
 APCS
 HW06 -- Hello, World in Racket, NetLogo, and Python
 2021-09-28
+*/
 
+/*
 Similarities: 
 Each language contained an output keyword/function and the "Hello, World!" string at the end in quotes.
 
@@ -10,3 +13,4 @@ Differences:
 Racket uses prefix notation and has parentheses around function calls
 Netlogo doesn't require parentheses
 Python needs parentheses after the print keyword to call.
+*/
