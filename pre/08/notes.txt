@@ -1,6 +1,10 @@
+/*
 Jefford Shau
 APCS
 HW05 -- Understanding the Summer Pre-work
 2021-09-27
+*/
 
+/*
 My trio was confused on the coding bat. I was only able to do a few string slicing problems because I struggled with the syntax. 
+*/
