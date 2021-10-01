@@ -1,3 +1,10 @@
+/*
+Jefford Shau
+APCS
+HW05 -- Understanding the Summer Pre-work
+2021-09-27
+*/
+
 // Exercise 2 of Chapter 2
 
 public class Time{
