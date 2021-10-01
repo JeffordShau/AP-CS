@@ -1,6 +1,13 @@
+/*
+Jefford Shau
+APCS
+HW05 -- Understanding the Summer Pre-work
+2021-09-27
+*/
+
 // Exercise 1 from Chapter 4
 
-/**
+/*
 1. baffle prints "wug" and invokes ping. Ping prints "."
 No, I wug.You wugga wug.I wug.
 2. main() -> "No, I"
@@ -8,3 +15,4 @@ No, I wug.You wugga wug.I wug.
   baffle() -> "wug"
   ping()
 3. If you invoke baffle() at the end of ping(), there will be an infinite loop.
+*/
