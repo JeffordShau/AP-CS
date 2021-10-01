@@ -1,8 +1,10 @@
-Jefford Shau
+/*Jefford Shau
 APCS
 HW03 -- Binary to Decimal and Back Conversion Algorithms
 2021-09-23
+*/
 
+/*
 0. Binary and Decimals
 The "base" in base-x number system describes different ways to represent values, dictating how many unique digits can be used in each place value.
 
@@ -37,3 +39,4 @@ Therefore 12 = 1100_2
 
 Notes:
 This was harder to put into words than we originally thought. We didn't have enough time to come up with many examples.
+*/
