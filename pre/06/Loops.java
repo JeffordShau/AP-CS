@@ -1,3 +1,10 @@
+/*
+Jefford Shau
+APCS
+HW05 -- Understanding the Summer Pre-work
+2021-09-27
+*/
+
 // Exercises 3, 4, 5 from Chapter 7
 
 public class Loops{
