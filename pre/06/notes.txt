@@ -1,6 +1,10 @@
+/*
 Jefford Shau
 APCS
 HW05 -- Understanding the Summer Pre-work
 2021-09-27
+*/
 
+/*
 The rest of my trio did not know how to approach the question and they had trouble with it. 
+*/
