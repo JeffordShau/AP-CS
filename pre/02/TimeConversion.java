@@ -1,3 +1,10 @@
+/*
+Jefford Shau
+APCS
+HW05 -- Understanding the Summer Pre-work
+2021-09-27
+*/
+
 // Exercise 3 of Chapter 3
 
 public class TimeConversion{
