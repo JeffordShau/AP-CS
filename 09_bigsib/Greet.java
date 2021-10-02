@@ -1,13 +1,12 @@
 /*
-Trio Name: Beep Boop (Jefford, Jeffrey, Anthony)
-Jefford Shau 
+Roaring 20s: Jefford Shau (Dylan), Jeffrey Tang (Mathias), Nada Hammed (Ray)
 APCS
 HW09 -- Greet v2
 2021-10-01
 */
 
 /*
-Discoveries: 
+Discoveries: javac command creates both the BigSib.class file and the Greet.class file
 Unresolved Questions: 
 */
 
