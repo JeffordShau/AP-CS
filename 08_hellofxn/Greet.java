@@ -6,7 +6,7 @@ HW08 -- Helper Funtions
 */
 
 /*
-Discoveries: The invocation of the functionhas the same syntax as Python..
+Discoveries: The invocation of the functionhas the same syntax as Python
 Unresolved Questions: null
 */
 
