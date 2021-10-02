@@ -1,4 +1,5 @@
 /*
+Trio Name: Beep Boop (Jefford, Jeffrey, Anthony)
 Jefford Shau 
 APCS
 HW09 -- Greet v2
