@@ -1,5 +1,5 @@
 /*
-Roaring 20s: Jefford Shau (Dylan), Jeffrey Tang (Mathias), Nada Hammed (Ray)
+Roaring 20s: Jefford Shau & Dylan, Jeffery Tang & Mathias, Nada Hammed & Ray
 APCS
 HW09 -- Greet v2
 2021-10-01
