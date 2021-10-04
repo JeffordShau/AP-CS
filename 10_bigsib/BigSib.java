@@ -11,7 +11,7 @@ Unresolved Questions:
 */
 
 public class BigSib {
-	 public static void greet(String name){
-		return("Hello there, " + name + "! Is all well?");
+	 public static String greet(String name){
+		return "Hello there, " + name + "! Is all well?";
 	}
 }
