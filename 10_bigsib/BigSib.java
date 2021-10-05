@@ -6,7 +6,7 @@ HW10 -- Return BigSib to SOP Greet
 */
 
 /*
-Discoveries: 
+Discoveries: there is no need to separately compile this file after Greet was complied 
 Unresolved Questions: 
 */
 
