@@ -6,7 +6,7 @@ HW10 -- Return BigSib to SOP Greet
 */
 
 /*
-Discoveries: 
+Discoveries: when compiling this file, both Greet.java and BigSib.java are being compilied. Able to reference a class under the same directory in different file. 
 Unresolved Questions: 
 */
 
