@@ -1,3 +1,4 @@
+/* 
 to hello_world:
   print ("Hello, world!")
 end
@@ -390,3 +391,4 @@ Line -7500403 true 150 150 210 180
 @#$#@#$#@
 0
 @#$#@#$#@
+*/
