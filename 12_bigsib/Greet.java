@@ -1,5 +1,5 @@
 /*
-Jefford Shau
+Triple J: Jeffery Tang & Mathias, Jefford Shau & Dylan, Jun Hong Wang & Bob
 APCS
 HW12 -  Greet v3
 2021-10-05
