@@ -6,6 +6,26 @@ HW06 -- Hello, World in Racket, NetLogo, and Python
 */
 
 /*
+Netlogo
+to hello_world:
+  print ("Hello, world!")
+end
+*/
+
+/*
+Python
+def hello_world ():
+    return ("Hello, world!")
+    
+print(hello_world ())
+*/
+
+/*
+Racket
+(display "Hello, world")
+*/
+
+/*
 Similarities: 
 Each language contained an output keyword/function and the "Hello, World!" string at the end in quotes.
 
