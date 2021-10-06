@@ -1,13 +1,14 @@
 /*
 Jefford Shau
 APCS
-HW12 -- Instance Variable
+HW12 -- Instance Variables
 2021-10-05
 */
 
 /*
-DISCO: 
-QCC: 
+DISCO: The helloMsg instance variable must be defined outside of both methods and inside of the class BigSib to be used by the greet method and the setHelloMsg method. 
+Defining the "richard" variable as the BigSib function worked smoothly. 
+QCC: Why use "richard" variable instead of BigSib. ?
 */
 
 public class BigSib {
@@ -20,11 +21,3 @@ public class BigSib {
     helloMsg = MsgPhrase;
 	}
 }
-
- /*
-$ javac Greet.java
-Word up freshman
-Salutations Dr. Spaceman
-Hey ya Kong Fooey
-Sup mom
-*/
