@@ -11,12 +11,12 @@ QCC:
 */
 
 public class BigSib {
-	 public String greet(String name){
-		return helloMsg + name;
+	String helloMsg; 
+	public String greet(String name){
+		return helloMsg + " " + name;
 	}
   
   	public void setHelloMsg(String MsgPhrase){
-    String helloMsg; 
     helloMsg = MsgPhrase;
 	}
 }
