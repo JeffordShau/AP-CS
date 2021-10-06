@@ -6,8 +6,9 @@ HW12 -  Greet v3
 */
 
 /*
-DISCO: 
-QCC: 
+DISCO: The helloMsg instance variable must be defined outside of both methods and inside of the class BigSib to be used by the greet method and the setHelloMsg method. 
+Defining the "richard" variable as the BigSib function worked smoothly. 
+QCC: Why use "richard" variable instead of BigSib. ?
 */
 
 public class Greet {
@@ -33,7 +34,3 @@ public class Greet {
 
   } //end main()
 } //end Greet
-
-/*
-Revise class BigSib to work with class Greet by adding instance variable helloMsg and a method to set its value. Output should look like this:
-*/
