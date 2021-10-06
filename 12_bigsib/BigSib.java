@@ -14,11 +14,13 @@ public class BigSib {
 	 public String greet(String name){
 		return setHelloMsg(name);
 	}
-}
   
   	public String setHelloMsg(String name){
     String helloMsg; 
-    helloMsg += name
+    helloMsg += name;
+	}
+}
+
  /*
 $ javac Greet.java
 Word up freshman
