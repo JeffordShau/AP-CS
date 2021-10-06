@@ -12,7 +12,7 @@ QCC:
 
 public class BigSib {
 	 public String greet(String name){
-		return setHelloMsg.MsgPhrase + name;
+		return helloMsg + name;
 	}
   
   	public void setHelloMsg(String MsgPhrase){
