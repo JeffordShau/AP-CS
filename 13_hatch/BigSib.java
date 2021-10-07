@@ -12,7 +12,7 @@ QCC: why is there no return type for a constructor, can't the return type be "vo
 */
 
 public class BigSib {
-	private String helloMsg; 
+	String helloMsg; 
 	public bigSibMsg(String msg){
 		helloMsg = msg; 
 	}
