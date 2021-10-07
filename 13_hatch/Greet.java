@@ -15,19 +15,19 @@ public class Greet {
     public static void main( String[] args ){
         String greeting;
         
-        BigSib richard = new bigSibMsg("Word up"); // Invoked by new keyword, runs when new object is introduced
+        BigSib richard = new BigSib("Word up"); // Invoked by new keyword, runs when new object is introduced
         greeting = richard.greet("freshman");
         System.out.println(greeting);
 
-        BigSib ryan =  new bigSibMsg("Salutations");
+        BigSib ryan =  new BigSib("Salutations");
         greeting = ryan.greet("Dr. Spaceman");
         System.out.println(greeting);
 
-        BigSib rhino =  new bigSibMsg("Hey ya");
+        BigSib rhino =  new BigSib("Hey ya");
         greeting = rhino.greet("Kong Fooey");
         System.out.println(greeting);
 
-        BigSib raymond =  new bigSibMsg("Sup");
+        BigSib raymond =  new BigSib("Sup");
         greeting = raymond.greet("mom");
         System.out.println(greeting);
 
