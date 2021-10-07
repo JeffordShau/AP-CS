@@ -19,18 +19,15 @@ public class Greet {
         greeting = richard.greet("freshman");
         System.out.println(greeting);
 
-        BigSib ryan =  new bigSibMsg;
-        ryan.setHelloMsg("Salutations");
+        BigSib ryan =  new bigSibMsg("Salutations");
         greeting = ryan.greet("Dr. Spaceman");
         System.out.println(greeting);
 
-        BigSib rhino =  new bigSibMsg;
-        rhino.setHelloMsg("Hey ya");
+        BigSib rhino =  new bigSibMsg("Hey ya");
         greeting = rhino.greet("Kong Fooey");
         System.out.println(greeting);
 
-        BigSib raymond =  new bigSibMsg;
-        raymond.setHelloMsg("Sup");
+        BigSib raymond =  new bigSibMsg("Sup");
         greeting = raymond.greet("mom");
         System.out.println(greeting);
 
