@@ -1,23 +1,22 @@
 /*
-Triple J: Jeffery Tang & Mathias, Jefford Shau & Dylan, Jun Hong Wang & Bob
+Triple J: Jeffery Tang & Mathias, Jefford Shau & Dylan, Jun Hong Wang & Bob (also got help from Nafix's post on Piazza)
 APCS
 HW12 -- Instance Variables
 2021-10-05
 */
 
 /*
-DISCO: The helloMsg instance variable must be defined outside of both methods and inside of the class BigSib to be used by the greet method and the setHelloMsg method. 
-Defining the "richard" variable as the BigSib function worked smoothly. 
-QCC: Why use "richard" variable instead of BigSib. ?
+DISCO: a constructor does not have return types nor static.
+a constructor must be public and before other methods
+QCC: why is there no return type for a constructor, can't the return type be "void"?
 */
 
 public class BigSib {
-	String helloMsg; 
+	private String helloMsg; 
+	public bigSibMsg(String msg){
+		helloMsg = msg; 
+	}
 	public String greet(String name){
 		return helloMsg + " " + name;
-	}
-  
-  public void setHelloMsg(String MsgPhrase){
-    helloMsg = MsgPhrase;
 	}
 }
