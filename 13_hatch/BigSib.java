@@ -13,7 +13,7 @@ QCC: why is there no return type for a constructor, can't the return type be "vo
 
 public class BigSib {
 	String helloMsg; 
-	public bigSibMsg(String msg){
+	public BigSib(String msg){
 		helloMsg = msg; 
 	}
 	public String greet(String name){
