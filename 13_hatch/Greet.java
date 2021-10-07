@@ -1,34 +1,34 @@
 /*
-Triple J: Jeffery Tang & Mathias, Jefford Shau & Dylan, Jun Hong Wang & Bob
+Triple J: Jeffery Tang & Mathias, Jefford Shau & Dylan, Jun Hong Wang & Bob (also got help from Nafix's post on Piazza)
 APCS
-HW13 -  Greet v3
-2021-10-06
+HW12 -- Instance Variables
+2021-10-05
 */
 
 /*
-DISCO: 
-QCC: 
+DISCO: a constructor does not have return types nor static.
+a constructor must be public and before other methods
+QCC: why is there no return type for a constructor, can't the return type be "void"?
 */
 
 public class Greet {
     public static void main( String[] args ){
         String greeting;
-        BigSib richard = new BigSib();
-
-        richard.setHelloMsg("Word up");
+        
+        BigSib richard = new bigSibMsg("Word up"); // Invoked by new keyword, runs when new object is introduced
         greeting = richard.greet("freshman");
         System.out.println(greeting);
 
-        richard.setHelloMsg("Salutations");
-        greeting = richard.greet("Dr. Spaceman");
+        ryan.setHelloMsg("Salutations");
+        greeting = ryan.greet("Dr. Spaceman");
         System.out.println(greeting);
 
-        richard.setHelloMsg("Hey ya");
-        greeting = richard.greet("Kong Fooey");
+        rhino.setHelloMsg("Hey ya");
+        greeting = rhino.greet("Kong Fooey");
         System.out.println(greeting);
 
-        richard.setHelloMsg("Sup");
-        greeting = richard.greet("mom");
+        raymond.setHelloMsg("Sup");
+        greeting = raymond.greet("mom");
         System.out.println(greeting);
 
   } //end main()
