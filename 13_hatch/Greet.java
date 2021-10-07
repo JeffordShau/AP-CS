@@ -8,6 +8,7 @@ HW12 -- Instance Variables
 /*
 DISCO: a constructor does not have return types nor static.
 a constructor must be public and before other methods
+the constructor method name must be the same as the class name otherwise there will be "cannot find symbol" error
 QCC: why is there no return type for a constructor, can't the return type be "void"?
 */
 
