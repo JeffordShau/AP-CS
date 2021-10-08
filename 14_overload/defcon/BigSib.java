@@ -12,10 +12,13 @@ QCC: why can you not define variables inside the default constructor if the defa
 
 public class BigSib {
 	String helloMsg; 
-	public BigSib() {
-    		helloMsg = "Nice to meet you, ";
+ 	public BigSib() {
+		helloMsg = "Nice to meet you, ";
+	}
+	public BigSib(String msg){
+		helloMsg = msg; 
 	}
 	public String greet(String name){
-		return helloMsg + name + "! How do you do?";
+		return helloMsg + " " + name;
 	}
 }
