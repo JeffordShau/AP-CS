@@ -6,13 +6,15 @@ HW14 -  Default Constructor
 */
 
 /*
-DISCO: 
+DISCO: got an error: invalid method declaration; return type required. this made me notice that the variable had to be defined before the default constructor and not inside. 
+
 QCC: 
 */
 
 public class BigSib {
+	String helloMsg; 
 	public BibSib(){
-    		String helloMsg = "Nice to meet you";
+    		helloMsg = "Nice to meet you";
 	}
 	public String greet(String name){
 		return helloMsg + " " + name;
