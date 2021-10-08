@@ -14,9 +14,9 @@ QCC:
 public class BigSib {
 	String helloMsg; 
 	public BigSib() {
-    		helloMsg = "Nice to meet you";
+    		helloMsg = "Nice to meet you, ";
 	}
 	public String greet(String name){
-		return helloMsg + " " + name;
+		return helloMsg + name + "! How do you do?";
 	}
 }
