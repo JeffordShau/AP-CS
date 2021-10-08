@@ -10,3 +10,11 @@ DISCO:
 QCC: 
 */
 
+public class BigSib {
+	public BibSib(){
+    String helloMsg = "Nice to meet you"; 
+  }
+	public String greet(String name){
+		return helloMsg + " " + name;
+	}
+}
