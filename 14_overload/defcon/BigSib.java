@@ -13,7 +13,7 @@ QCC:
 
 public class BigSib {
 	String helloMsg; 
-	public BibSib() {
+	public BigSib() {
     		helloMsg = "Nice to meet you";
 	}
 	public String greet(String name){
