@@ -1,0 +1,12 @@
+./BigSib.java:14: error: invalid method declaration; return type required
+        public BibSib(){
+               ^
+(misspelled method)
+
+./BigSib.java:18: error: cannot find symbol
+                return helloMsg + " " + name;
+                       ^
+  symbol:   variable helloMsg
+  location: class BigSib
+  (Have to define helloMsg before the dafault constructor)
+  
