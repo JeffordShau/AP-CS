@@ -6,9 +6,8 @@ HW14 -  Default Constructor
 */
 
 /*
-DISCO: got an error: invalid method declaration; return type required. this made me notice that the variable had to be defined before the default constructor and not inside. 
-
-QCC: 
+DISCO: got an error: error: cannot find symbol. this made me notice that the variable had to be defined before the default constructor and not inside. 
+QCC: why can you not define variables inside the default constructor if the default constructor is accessible by the other methods anyway? 
 */
 
 public class BigSib {
