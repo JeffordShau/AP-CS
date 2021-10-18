@@ -1,5 +1,5 @@
 /*
-AJR (Ameer, Jefford, Ryan)
+AJR (Ameer Alnasser, Jefford Shau, Ryan Lau)
 APCS
 HW18 -- Improved UML Bankaccount -> Code
 2021-10-14
