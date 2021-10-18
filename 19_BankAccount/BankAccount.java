@@ -1,11 +1,11 @@
 // TNPG: AJR (Ameer Alnasser, Jefford Shau, Ryan Lau)
 // APCS
-// HW19 -- ???
+// HW19 -- Conditionals
 // 2021-10-18
 
 /*
 DISCOVERIES
-    0.
+    0. An if conditional does not work
 UNRESOLVED QUESTIONS
     0.
 */
@@ -79,7 +79,7 @@ public class BankAccount {
     }
 
     public boolean authenticate(int acctNum1, String password1) {
-        if (acctNum1 == acctNum && password1 == passwd) {
+        if acctNum1 == acctNum && password1 == passwd {
             return true;
         } else {
             return false;
