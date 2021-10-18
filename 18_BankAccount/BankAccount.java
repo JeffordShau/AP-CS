@@ -82,16 +82,20 @@ public class BankAccount {
 	}
 
 	public static void main(String[] args) {
-	    BankAccount acc1 = new BankAccount();
-	    String acc1Info = acc1.printInfo();
-	    System.out.println(acc1Info);
+        BankAccount acc1 = new BankAccount();
+        String acc1Info = acc1.printInfo();
+        System.out.println(acc1Info + "\n");
 
-	    BankAccount acc2 = new BankAccount("ameer alnasser", "@jR123", 5874);
-	    String acc2Info = acc2.printInfo();
-	    System.out.println(acc2Info);
+        BankAccount acc2 = new BankAccount("ameer alnasser", "@jR123", 5874);
+        System.out.println(acc2.printInfo() + "\n");
+        acc2.deposit(1000000);
+        System.out.println(acc2.checkBal() + "\n");
+        acc2.withdraw(1);
+        acc2.setName("bob");
+        acc2.setPassword("passwd123");
+        acc2.setPin(4321);
 
-	    acc2.deposit(1000000);
-	    System.out.println(acc2.printInfo());
+        System.out.println(acc2.printInfo());
 
 	}
 }
