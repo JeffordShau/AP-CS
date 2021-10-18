@@ -5,9 +5,11 @@
 
 /*
 DISCOVERIES
-    0. An if conditional does not work
+    0. We are able to set parameter ranges for methods with if conditionals. 
+    1. An if conditional does not work without parentheses around the Boolean expression. 
+    2. Need to set returnType as Boolean when returning a Boolean value. 
 UNRESOLVED QUESTIONS
-    0.
+    0. 
 */
 
 public class BankAccount {
@@ -79,7 +81,7 @@ public class BankAccount {
     }
 
     public boolean authenticate(int acctNum1, String password1) {
-        if acctNum1 == acctNum && password1 == passwd {
+        if (acctNum1 == acctNum && password1 == passwd) {
             return true;
         } else {
             return false;
