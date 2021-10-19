@@ -32,7 +32,7 @@ public class Teller{
         System.out.println(ba.toString() + "\n");
 
         System.out.println("test authenticate():");
-        System.out.println(ba.authenticate(999999999, "password!"));
+        System.out.println(ba.authenticate(999999999, (short) 1000));
         System.out.println(ba.authenticate(999999999, "AJR4521"));
     
     
