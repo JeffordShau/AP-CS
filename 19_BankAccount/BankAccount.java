@@ -9,7 +9,7 @@ DISCOVERIES
     1. An if conditional does not work without parentheses around the Boolean expression. 
     2. Need to set returnType as Boolean when returning a Boolean value. 
 UNRESOLVED QUESTIONS
-    0. 
+    0. Why use dataType short when we can use dataType int, float, double, or long? 
 */
 
 public class BankAccount {
