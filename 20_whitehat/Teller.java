@@ -16,7 +16,7 @@ UNRESOLVED QUESTIONS
 public class Teller{
 
   public static void main(String[] args) {
-    // Object made to run normally
+    // Object made to run normally; however, returns are wrong due to incorrect returns 
         BankAccount ba = new BankAccount();
         ba.setAcctNum(293014650);
         ba.setBalance(1000);
@@ -57,7 +57,5 @@ public class Teller{
         System.out.println("test authenticate():");
         System.out.println(na.authenticate(999999999, (short) 100));
         System.out.println(na.authenticate(999999999, (short) 9999));
-
-
   }
 }
