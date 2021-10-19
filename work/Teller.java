@@ -5,7 +5,9 @@
 
 /*
 DISCOVERIES
-    0. 
+    0. Withdrawal returns a string when it should return a boolean. 
+    1. Authenticate uses short PIN as parameter when it should use String password. 
+    2. All mutators return the new values when they should return the old values. 
 UNRESOLVED QUESTIONS
     0. 
 */
