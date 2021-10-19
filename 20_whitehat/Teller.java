@@ -59,11 +59,5 @@ public class Teller{
         System.out.println(na.authenticate(999999999, (short) 9999));
 
 
-
-
   }
-
-
-
-
 }
