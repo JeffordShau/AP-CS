@@ -5,7 +5,10 @@
 
 /*
 DISCOVERIES
-
+    0. Implemented conditionals into mean, max, and geoMean methods. 
+    1. Considered extreme test cases (negative values, zero value, positive values).
+    2. Imported java.lang.math to help perform basic operations. 
+    3. Whenever you perform an operation with ints, the result will be stored as type double. 
 UNRESOLVED QUESTIONS
     0. Is there a way for a method (not overloaded) to have two possible return types?
     1. How can we convert a double to an int without type casting?
