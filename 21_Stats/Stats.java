@@ -1,4 +1,18 @@
+// TNPG: AJR (Ameer Alnasser, Jefford Shau, Ryan Lau)
+// APCS
+// HW21 -- STAtisTically Speaking...
+// 2021-10-20
+
+/*
+DISCOVERIES
+
+UNRESOLVED QUESTIONS
+    0. Is there a way for a method (not overloaded) to have two possible return types?
+    1. How can we convert a double to an int without type casting?
+*/
+
 /**
+Skeleton from: 
     Clyde "Thluffy" Sinclair
     APCS
     HW20 --
