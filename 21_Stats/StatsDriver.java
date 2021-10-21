@@ -11,6 +11,8 @@ UNRESOLVED QUESTIONS
     1. How can we convert a double to an int without type casting?
 */
 
+public class StatsDriver{
+
     //main method for testing functionality
     public static void main( String[] args ) {
         Stats s = new Stats();
