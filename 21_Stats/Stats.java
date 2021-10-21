@@ -26,7 +26,7 @@ public class Stats {
         if (a > b) {
             return a;
         } else {
-            return b;
+            return b; 
         }
     }
 
