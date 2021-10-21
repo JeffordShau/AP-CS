@@ -5,7 +5,7 @@
 
 /*
 DISCOVERIES
-
+    0. 
 UNRESOLVED QUESTIONS
     0. Is there a way for a method (not overloaded) to have two possible return types?
     1. How can we convert a double to an int without type casting?
@@ -39,9 +39,9 @@ public class Stats {
     }
 
     public static int geoMean(int a, int b) {
-        int x = a * b; 
         if (a >= 0 && b >= 0) {
-           return Math.pow(x, 1/2);
+            int x = Math.pow(a * b, 1/2; 
+            return x;
         } else {
             System.out.println("geoMean() does not work with negative inputs");
             return -1;
@@ -79,7 +79,8 @@ public class Stats {
 
     public static int geoMean(int a, int b, int c) {
         if (a >= 0 && b >= 0) {
-            return Math.pow(a * b * c, 1/3);
+            int x = Math.pow(a * b * c, 1/3);
+            return x;
         } else {
             System.out.println("geoMean() does not work with negative inputs");
             return -1;
