@@ -39,8 +39,9 @@ public class Stats {
     }
 
     public static int geoMean(int a, int b) {
+        int x = a * b; 
         if (a >= 0 && b >= 0) {
-           return Math.pow(a * b, 1/2);
+           return Math.pow(x, 1/2);
         } else {
             System.out.println("geoMean() does not work with negative inputs");
             return -1;
