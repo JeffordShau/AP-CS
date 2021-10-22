@@ -169,9 +169,9 @@ public class Coin {
    * precond: n/a
    * postcond: Return String comprised of name and current face
    ***/
-  /*
+  
   public String toString() {
-
+    return name + " -- " + upFace; 
   }
-*/
+
 }//end class
