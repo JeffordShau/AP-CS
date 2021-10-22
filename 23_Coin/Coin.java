@@ -5,10 +5,13 @@
  ***/
 
 public class Coin {
-
-  //attributes aka instance vars
-
-
+  private double value;
+  private String upFace;
+  private String name;
+  private int flipCtr;
+  private int headsCtr;
+  private int tailsCtr;
+  private double bias;
 
   /***
    *  Coin() -- default constuctor
@@ -16,7 +19,13 @@ public class Coin {
    *  postcond:
    ***/
   public Coin() {
-
+    value = 0;
+    upFace = "heads";
+    name = "coin";
+    flipCtr = 0;
+    headsCtr = 0;
+    tailsCtr = 0;
+    bias = 0.5;
   }
 
 
@@ -32,9 +41,10 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s ) {
-
+    //if (s = "penny") || (s = "nickel") || (s = "dime") || (s = "quarter") || (s = "half dollar") || (s = "dollar") {
+      name = s;
+    //}
   }
-
 
   /***
       Coin(String,String) --
@@ -42,30 +52,31 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s, String nowFace ) {
-
+    //if (s = "penny") || (s = "nickel") || (s = "dime") || (s = "quarter") || (s = "half dollar") || (s = "dollar") {
+      name = s;
+    //}
+    upFace = nowFace;
   }
-
-
   // Accessors...
   // ----------------------------
   public String getUpFace() {
-
+    return upFace;
   }
 
   public int getFlipCtr() {
-
+    return flipCtr;
   }
 
   public double getValue() {
-
+    return value;
   }
 
   public int getHeadsCtr() {
-
+    return headsCtr;
   }
 
   public int getTailsCtr() {
-
+    return tailsCtr;
   }
   // ----------------------------
 
@@ -77,7 +88,24 @@ public class Coin {
    * Returns value assigned.
    ***/
   private double assignValue( String s ) {
-
+    if (s = "penny"){
+      value = .01;
+    }
+    else if (s = "nickel"){
+      value = .05;
+    }
+    else if (s = "dime"){
+      value = .1;
+    }
+    else if (s = "quarter"){
+      value = .25;
+    }
+    else if (s = "half dollar"){
+      value = .5;
+    }
+    else if (s = "dollar"){
+      value = 1;
+    }
   }
 
 
@@ -87,7 +115,11 @@ public class Coin {
       postcond: Coin's attribs reset to starting vals
   ***/
   public void reset( String s, double d ) {
-
+    if ((s = "heads") || (s = "tails")){
+      if (0.0 <= d && d <= 1.0){
+        Coin reset = new Coin();
+      }
+    }
   }
 
 
@@ -101,7 +133,7 @@ public class Coin {
    * Returns "heads" or "tails"
    ***/
   public String flip() {
-
+    return flipCtr;
   }
 
 
@@ -112,7 +144,7 @@ public class Coin {
    * or both showing tails. False otherwise.
    ***/
   public boolean equals( Coin other ) {
-
+    return true;
   }
 
 
