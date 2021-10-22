@@ -46,7 +46,7 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s ) {
-    if (s == "penny") or (s == "nickel") or (s == "dime") or (s == "quarter") or (s == "half dollar") or (s == "dollar") {
+    if (s == "penny") || (s == "nickel") || (s == "dime") || (s == "quarter") || (s == "half dollar") || (s == "dollar") {
       name = s;
     }
   }
@@ -57,7 +57,7 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s, String nowFace ) {
-    if (s == "penny") or (s == "nickel") or (s == "dime") or (s == "quarter") or (s == "half dollar") or (s == "dollar") {
+    if (s == "penny") || (s == "nickel") || (s == "dime") || (s == "quarter") || (s == "half dollar") || (s == "dollar") {
       name = s;
     }
     upFace = nowFace;
@@ -119,7 +119,7 @@ public class Coin {
       postcond: Coin's attribs reset to starting vals
   ***/
   public void reset( String s, double d ) {
-    if ((s == "heads") or (s == "tails")){
+    if ((s == "heads") || (s == "tails")){
       if (0.0 <= d && d <= 1.0){
         Coin reset = new Coin();
       }
