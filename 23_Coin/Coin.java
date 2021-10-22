@@ -139,13 +139,13 @@ public class Coin {
     Random random = new Random();
     double coinFlip = random.nextDouble(1); // generates double between 0 and 1
     if (coinFlip >= 0.5) {
-      headsCtr += ;
+      headsCtr +=;
       upFace = "heads";
     } else {
-      tailsCtr += ;
+      tailsCtr +=;
       upFace = "tails";
     }
-    flipCtr += ;
+    flipCtr +=;
     return upFace;
   }
 
@@ -156,13 +156,13 @@ public class Coin {
    * postcond: Returns true if both coins showing heads
    * or both showing tails. False otherwise.
    ***/
-  //
-  public boolean equals(Coin1, Coin2) {
+  /*
+  public boolean equals(otherCoin) {
     
     
     return true;
   }
-//
+*/
 
   /***
    * String toString() -- overrides toString() provided by Java
