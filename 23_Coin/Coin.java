@@ -1,23 +1,29 @@
-/***
- *  class Coin
- *  by Clyde "Thluffy" Sinclair
- *  SKELETON
- ***/
+/*
+JJ: (Jefford Shau and  )
+APCS
+HW23 -- Coins
+2020-10-22
+ */
+
+/*
+DISCO: 
+QCC: 
+*/
 
 public class Coin {
-  private double value;
-  private String upFace;
-  private String name;
-  private int flipCtr;
-  private int headsCtr;
-  private int tailsCtr;
-  private double bias;
+  private double value; // monetary worth
+  private String upFace; // face showing currently
+  private String name; // name of coin
+  private int flipCtr; // times coin was flipped
+  private int headsCtr; // times coin was heads
+  private int tailsCtr;  // times coin was tails
+  private double bias; // likelihood of landing heads (1.0) or tails (0.0) every flip
 
   /***
    *  Coin() -- default constuctor
    *  precond:
    *  postcond:
-   ***/
+   ***/ 
   public Coin() {
     value = 0;
     upFace = "heads";
@@ -27,7 +33,6 @@ public class Coin {
     tailsCtr = 0;
     bias = 0.5;
   }
-
 
   /***
       Coin(String) -- overloaded constructor
@@ -41,9 +46,9 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s ) {
-    //if (s = "penny") || (s = "nickel") || (s = "dime") || (s = "quarter") || (s = "half dollar") || (s = "dollar") {
+    if (s = "penny") or (s = "nickel") or (s = "dime") or (s = "quarter") or (s = "half dollar") or (s = "dollar") {
       name = s;
-    //}
+    }
   }
 
   /***
@@ -52,9 +57,9 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s, String nowFace ) {
-    //if (s = "penny") || (s = "nickel") || (s = "dime") || (s = "quarter") || (s = "half dollar") || (s = "dollar") {
+    if (s = "penny") or (s = "nickel") or (s = "dime") or (s = "quarter") or (s = "half dollar") or (s = "dollar") {
       name = s;
-    //}
+    }
     upFace = nowFace;
   }
   // Accessors...
@@ -79,7 +84,6 @@ public class Coin {
     return tailsCtr;
   }
   // ----------------------------
-
 
   /***
    * assignValue() -- set a Coin's monetary value based on its name
