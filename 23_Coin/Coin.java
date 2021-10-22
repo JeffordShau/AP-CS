@@ -137,7 +137,7 @@ public class Coin {
    ***/
   public String flip() {
     Random random = new Random();
-    double coinFlip = random.nextDouble(0.0, 1.0); // generates double between 0 and 1
+    double coinFlip = random.nextDouble(); // generates double between 0 and 1
     if (coinFlip >= 0.5) {
       headsCtr += 1;
       upFace = "heads";
