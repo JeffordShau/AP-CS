@@ -46,7 +46,7 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s ) {
-    if (s == "penny") || (s == "nickel") || (s == "dime") || (s == "quarter") || (s == "half dollar") || (s == "dollar") {
+    if ((s == "penny") || (s == "nickel") || (s == "dime") || (s == "quarter") || (s == "half dollar") || (s == "dollar")) {
       name = s;
     }
   }
@@ -57,7 +57,7 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s, String nowFace ) {
-    if (s == "penny") || (s == "nickel") || (s == "dime") || (s == "quarter") || (s == "half dollar") || (s == "dollar") {
+    if ((s == "penny") || (s == "nickel") || (s == "dime") || (s == "quarter") || (s == "half dollar") || (s == "dollar")) {
       name = s;
     }
     upFace = nowFace;
@@ -92,22 +92,22 @@ public class Coin {
    * Returns value assigned.
    ***/
   private double assignValue(String s ) {
-    if (s == "penny"){
+    if (s == "penny") {
       value = .01;
     }
-    else if (s == "nickel"){
+    else if (s == "nickel") {
       value = .05;
     }
-    else if (s == "dime"){
+    else if (s == "dime") {
       value = .1;
     }
-    else if (s == "quarter"){
+    else if (s == "quarter") {
       value = .25;
     }
-    else if (s == "half dollar"){
+    else if (s == "half dollar") {
       value = .5;
     }
-    else if (s == "dollar"){
+    else if (s == "dollar") {
       value = 1;
     }
   }
