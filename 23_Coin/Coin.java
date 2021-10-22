@@ -46,7 +46,7 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s ) {
-    if (s = "penny") or (s = "nickel") or (s = "dime") or (s = "quarter") or (s = "half dollar") or (s = "dollar") {
+    if (s == "penny") or (s == "nickel") or (s == "dime") or (s == "quarter") or (s == "half dollar") or (s == "dollar") {
       name = s;
     }
   }
@@ -57,7 +57,7 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s, String nowFace ) {
-    if (s = "penny") or (s = "nickel") or (s = "dime") or (s = "quarter") or (s = "half dollar") or (s = "dollar") {
+    if (s == "penny") or (s == "nickel") or (s == "dime") or (s == "quarter") or (s == "half dollar") or (s == "dollar") {
       name = s;
     }
     upFace = nowFace;
@@ -91,23 +91,23 @@ public class Coin {
    * postcond: instvar value gets appropriate value
    * Returns value assigned.
    ***/
-  private double assignValue( String s ) {
-    if (s = "penny"){
+  private double assignValue(String s ) {
+    if (s == "penny"){
       value = .01;
     }
-    else if (s = "nickel"){
+    else if (s == "nickel"){
       value = .05;
     }
-    else if (s = "dime"){
+    else if (s == "dime"){
       value = .1;
     }
-    else if (s = "quarter"){
+    else if (s == "quarter"){
       value = .25;
     }
-    else if (s = "half dollar"){
+    else if (s == "half dollar"){
       value = .5;
     }
-    else if (s = "dollar"){
+    else if (s == "dollar"){
       value = 1;
     }
   }
@@ -119,7 +119,7 @@ public class Coin {
       postcond: Coin's attribs reset to starting vals
   ***/
   public void reset( String s, double d ) {
-    if ((s = "heads") || (s = "tails")){
+    if ((s == "heads") or (s == "tails")){
       if (0.0 <= d && d <= 1.0){
         Coin reset = new Coin();
       }
