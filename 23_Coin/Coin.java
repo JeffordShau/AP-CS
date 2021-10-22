@@ -139,13 +139,13 @@ public class Coin {
     Random random = new Random();
     double coinFlip = random.nextDouble(1); // generates double between 0 and 1
     if (coinFlip >= 0.5) {
-      headsCtr +=;
+      headsCtr += 1;
       upFace = "heads";
     } else {
-      tailsCtr +=;
+      tailsCtr += 1;
       upFace = "tails";
     }
-    flipCtr +=;
+    flipCtr += 1;
     return upFace;
   }
 
