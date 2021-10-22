@@ -10,6 +10,8 @@ DISCO:
 QCC: 
 */
 
+import java.util.Random;
+
 public class Coin {
   private double value; // monetary worth
   private String upFace; // face showing currently
@@ -110,22 +112,19 @@ public class Coin {
     else if (s == "dollar") {
       value = 1;
     }
+    return value;
   }
-
-
+  
   /***
       reset() -- initialize a Coin
       precond:  s is "heads" or "tails", 0.0 <= d <= 1.0
       postcond: Coin's attribs reset to starting vals
   ***/
-  public void reset( String s, double d ) {
-    if ((s == "heads") || (s == "tails")){
-      if (0.0 <= d && d <= 1.0){
+  public void reset(String s, double d ) {
+    if (((s == "heads") || (s == "tails")) && (0.0 <= d && d <= 1.0)) {
         Coin reset = new Coin();
-      }
     }
   }
-
 
   /***
    * String flip() -- simulates a Coin flip
@@ -137,7 +136,17 @@ public class Coin {
    * Returns "heads" or "tails"
    ***/
   public String flip() {
-    return flipCtr;
+    Random random = new Random();
+    double coinFlip = random.nextDouble(1); // generates double between 0 and 1
+    if (coinFlip >= 0.5) {
+      headsCtr += ;
+      upFace = "heads";
+    } else {
+      tailsCtr += ;
+      upFace = "tails";
+    }
+    flipCtr += ;
+    return upFace;
   }
 
 
@@ -147,10 +156,13 @@ public class Coin {
    * postcond: Returns true if both coins showing heads
    * or both showing tails. False otherwise.
    ***/
-  public boolean equals( Coin other ) {
+  //
+  public boolean equals(Coin1, Coin2) {
+    
+    
     return true;
   }
-
+//
 
   /***
    * String toString() -- overrides toString() provided by Java
