@@ -160,9 +160,9 @@ public class Coin {
    * or both showing tails. False otherwise.
    ***/
   
-  public boolean equals(other coin2) {
-    if ((coin2.name != "heads") || (coin2.name != "tails")) {
-      upFace == coin2.upFace;
+  public boolean equals(Coin other) {
+    if ((other.name != "heads") || (other.name != "tails")) {
+      upFace == other.upFace;
       return true; 
     } else {
       return false; 
