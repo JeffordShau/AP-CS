@@ -172,7 +172,7 @@ public class Coin {
   public boolean equals(Coin other) {
     if ((other.name != "heads") || (other.name != "tails")) {
       current = upFace; 
-      if (current == other.upFace) {
+      if (current == other.getUpFace()) {
       return true; 
       } else {
       return false; 
