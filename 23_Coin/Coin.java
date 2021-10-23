@@ -32,7 +32,7 @@ public class Coin {
   public Coin() {
     value = 0;
     upFace = "heads";
-    name = "coin";
+    name = "null";
     flipCtr = 0;
     headsCtr = 0;
     tailsCtr = 0;
@@ -51,6 +51,12 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s ) {
+    value = 0;
+    upFace = "heads";
+    flipCtr = 0;
+    headsCtr = 0;
+    tailsCtr = 0;
+    bias = 0.5;
     if ((s == "penny") || (s == "nickel") || (s == "dime") || (s == "quarter") || (s == "half dollar") || (s == "dollar")) {
       name = s;
     }
@@ -62,6 +68,11 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s, String nowFace ) {
+    value = 0;
+    flipCtr = 0;
+    headsCtr = 0;
+    tailsCtr = 0;
+    bias = 0.5;
     if ((s == "penny") || (s == "nickel") || (s == "dime") || (s == "quarter") || (s == "half dollar") || (s == "dollar")) {
       name = s;
     }
