@@ -167,6 +167,8 @@ public class Coin {
       } else {
       return false; 
       }
+    } else {
+      return "Comparison invalid";
     }
   }
 
