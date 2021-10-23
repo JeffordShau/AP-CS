@@ -162,10 +162,11 @@ public class Coin {
   
   public boolean equals(Coin other) {
     if ((other.name != "heads") || (other.name != "tails")) {
-      upFace == other.upFace;
+      if (upFace == other.upFace) {
       return true; 
-    } else {
+      } else {
       return false; 
+      }
     }
   }
 
