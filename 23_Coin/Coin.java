@@ -163,17 +163,16 @@ public class Coin {
     return upFace;
   }
 
-
   /***
    * boolean equals(Coin) -- checks to see if 2 coins have same face up
    * precond: other is not null
    * postcond: Returns true if both coins showing heads
    * or both showing tails. False otherwise.
    ***/
-  
   public boolean equals(Coin other) {
     if ((other.name != "heads") || (other.name != "tails")) {
-      if (upFace == other.upFace) {
+      current = upFace; 
+      if (current == other.upFace) {
       return true; 
       } else {
       return false; 
@@ -188,7 +187,6 @@ public class Coin {
    * precond: n/a
    * postcond: Return String comprised of name and current face
    ***/
-  
   public String toString() {
     return name + " -- " + upFace; 
   }
