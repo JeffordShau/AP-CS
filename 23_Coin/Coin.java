@@ -171,8 +171,7 @@ public class Coin {
    ***/
   public boolean equals(Coin other) {
     if ((other.name != "heads") || (other.name != "tails")) {
-      current = upFace; 
-      if (current == other.getUpFace()) {
+      // if (upFace == other.upFace) {
       return true; 
       } else {
       return false; 
@@ -181,7 +180,7 @@ public class Coin {
       return false;
     }
   }
-
+ //
   /***
    * String toString() -- overrides toString() provided by Java
    * precond: n/a
