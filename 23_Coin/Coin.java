@@ -156,13 +156,15 @@ public class Coin {
    * postcond: Returns true if both coins showing heads
    * or both showing tails. False otherwise.
    ***/
-  /*
+  
   public boolean equals(otherCoin) {
-    
-    
-    return true;
+    if (otherCoin != undefined) {
+      upFace == otherCoin.upFace;
+      return true; 
+    } else {
+      return false; 
+    }
   }
-*/
 
   /***
    * String toString() -- overrides toString() provided by Java
