@@ -169,6 +169,7 @@ public class Coin {
       }
     }
   }
+}
 
   /***
    * String toString() -- overrides toString() provided by Java
