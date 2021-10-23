@@ -7,7 +7,10 @@ HW23 -- Coins
 
 /*
 DISCO: 
+  0. Implemented the random class into my code to randomize the coin flips. 
 QCC: 
+  1. How do you compare two objects in the same method when only using one of them as arguments?
+  2. How do you check if an object exists? 
 */
 
 import java.util.Random;
@@ -158,7 +161,7 @@ public class Coin {
    ***/
   
   public boolean equals(other coin2) {
-    if (coin2 != undefined) {
+    if (coin2.name != undefined) {
       upFace == coin2.upFace;
       return true; 
     } else {
