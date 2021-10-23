@@ -161,7 +161,7 @@ public class Coin {
    ***/
   
   public boolean equals(other coin2) {
-    if (coin2.name != "heads") || (coin2.name != "tails") {
+    if ((coin2.name != "heads") || (coin2.name != "tails")) {
       upFace == coin2.upFace;
       return true; 
     } else {
