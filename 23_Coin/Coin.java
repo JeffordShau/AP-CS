@@ -157,9 +157,9 @@ public class Coin {
    * or both showing tails. False otherwise.
    ***/
   
-  public boolean equals(otherCoin) {
-    if (otherCoin != undefined) {
-      upFace == otherCoin.upFace;
+  public boolean equals(other coin2) {
+    if (coin2 != undefined) {
+      upFace == coin2.upFace;
       return true; 
     } else {
       return false; 
