@@ -80,7 +80,7 @@ public class Driver {
       }
       //Flip until 65536 matches have occured and hte number of matches is divisible by the year of your birth
       counter = 0;
-      while ((counter < 65536) && (counter % 2004 == 0)){
+      while ((counter < 65536) && (counter % 2004 != 0)){
         yours.flip();
         wayne.flip();
         if ( yours.equals(wayne) ) {
