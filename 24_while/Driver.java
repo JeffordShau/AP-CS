@@ -83,8 +83,9 @@ public class Driver {
       while ((counter < 65536) && (counter % 2004 != 0)){
         yours.flip();
         wayne.flip();
+        counter +=1;
         if ( yours.equals(wayne) ) {
-          counter +=1;
+          flipCtr += 1;
         }
       }
       System.out.println(counter);  
