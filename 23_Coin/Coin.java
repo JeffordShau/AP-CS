@@ -3,16 +3,17 @@ JJ: (Jefford Shau and Jomin Zhang )
 APCS
 HW23 -- Coins
 2020-10-22
+time spent: 1.1 hour
  */
 
 /*
 DISCO:
-  0. Implemented the random class into my code to randomize the coin flips.
+  0. Implemented the Math.random into my code to randomize the coin flips.
+  1. "this" keyword refers to the current object in the invocation of the Driver line. 
+  2. Found that using Math.random was easier to use than importing random class. 
 QCC:
-  0. How do you check if an object exists?
+  0. How do you check if an object exists without producing an error? 
 */
-
-import java.util.Random;
 
 public class Coin {
   private double value; // monetary worth
@@ -57,7 +58,6 @@ public class Coin {
     bias = 0.5;
     upFace = "";
     value = assignValue(s);
-    }
   }
 
   /***
@@ -136,7 +136,6 @@ public class Coin {
     tailsCtr = 0;
     bias = d;
     upFace = s;
-    value = 0;
     }
   }
 
@@ -150,9 +149,9 @@ public class Coin {
    * Returns "heads" or "tails"
    ***/
   public String flip() {
+    flipCtr += 1;
     double bias = this.bias;
-    Random random = new Random();
-    double coinFlip = random.nextDouble(); // generates double between 0 and 1
+    coinFlip = Math.random(); // generates double between 0 and 1
     if (coinFlip <= bias) {
       headsCtr += 1;
       upFace = "heads";
@@ -160,7 +159,6 @@ public class Coin {
       tailsCtr += 1;
       upFace = "tails";
     }
-    flipCtr += 1;
     return upFace;
   }
 
@@ -171,7 +169,7 @@ public class Coin {
    * or both showing tails. False otherwise.
    ***/
   public boolean equals(Coin other) {
-    return this.upFace == other.upFace; // compares this coin to other coin up face value
+    return this.upFace == other.upFace; // this refers to this coin
 
   /***
    * String toString() -- overrides toString() provided by Java
