@@ -59,8 +59,37 @@ public class Driver {
       else {
         System.out.println( "No match. Firestarter you can not be." );
       }
-      /*===================TOP==========================
-      ====================BOTTOM======================*/
+
+      // Flip until x amount of heads appears
+      int counter = 0;
+      while (counter < 10) {
+        if (yours.flip() == "heads"){
+          counter += 1;
+          System.out.println("Heads: "+ yours.getHeadsCtr());
+        }
+      }
+      //Flip until y amount of matches
+      counter = 0;
+      while (counter < 10){
+        yours.flip();
+        wayne.flip();
+        if ( yours.equals(wayne) ) {
+          counter +=1;
+          System.out.println("Matchee matchee!");
+        }
+      }
+      //Flip until 65536 matches have occured and hte number of matches is divisible by the year of your birth
+      counter = 0;
+      while ((counter < 65536) && (counter % 2004 == 0)){
+        yours.flip();
+        wayne.flip();
+        if ( yours.equals(wayne) ) {
+          counter +=1;
+        }
+      }
+      System.out.println(counter);  
+
+
 
   }//end main()
 
