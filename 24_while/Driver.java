@@ -85,7 +85,7 @@ public class Driver {
         wayne.flip();
         counter +=1;
         if ( yours.equals(wayne) ) {
-          flipCtr += 1;
+          yours.flipCtr += 1;
         }
       }
       System.out.println(counter);  
