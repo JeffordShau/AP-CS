@@ -1,16 +1,15 @@
 /*
-JJ: (Jefford Shau and  )
+JJ: (Jefford Shau and Jomin Zhang )
 APCS
 HW23 -- Coins
 2020-10-22
  */
 
 /*
-DISCO: 
-  0. Implemented the random class into my code to randomize the coin flips. 
-QCC: 
-  1. How do you compare two objects in the same method when only using one of them as arguments?
-  2. How do you check if an object exists? 
+DISCO:
+  0. Implemented the random class into my code to randomize the coin flips.
+QCC:
+  0. How do you check if an object exists?
 */
 
 import java.util.Random;
@@ -28,15 +27,15 @@ public class Coin {
    *  Coin() -- default constuctor
    *  precond:
    *  postcond:
-   ***/ 
+   ***/
   public Coin() {
-    value = 0;
-    upFace = "heads";
     name = "null";
     flipCtr = 0;
     headsCtr = 0;
     tailsCtr = 0;
     bias = 0.5;
+    upFace = "";
+    value = 0;
   }
 
   /***
@@ -51,14 +50,13 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s ) {
-    value = 0;
-    upFace = "heads";
+    name = s;
     flipCtr = 0;
     headsCtr = 0;
     tailsCtr = 0;
     bias = 0.5;
-    if ((s == "penny") || (s == "nickel") || (s == "dime") || (s == "quarter") || (s == "half dollar") || (s == "dollar")) {
-      name = s;
+    upFace = "";
+    value = assignValue(s);
     }
   }
 
@@ -68,15 +66,13 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s, String nowFace ) {
-    value = 0;
+    name = s;
     flipCtr = 0;
     headsCtr = 0;
     tailsCtr = 0;
     bias = 0.5;
-    if ((s == "penny") || (s == "nickel") || (s == "dime") || (s == "quarter") || (s == "half dollar") || (s == "dollar")) {
-      name = s;
-    }
     upFace = nowFace;
+    value = assignValue(s);
   }
   // Accessors...
   // ----------------------------
@@ -128,15 +124,19 @@ public class Coin {
     }
     return value;
   }
-  
+
   /***
       reset() -- initialize a Coin
       precond:  s is "heads" or "tails", 0.0 <= d <= 1.0
       postcond: Coin's attribs reset to starting vals
   ***/
   public void reset(String s, double d ) {
-    if (((s == "heads") || (s == "tails")) && (0.0 <= d && d <= 1.0)) {
-        Coin reset = new Coin();
+    flipCtr = 0;
+    headsCtr = 0;
+    tailsCtr = 0;
+    bias = d;
+    upFace = s;
+    value = 0;
     }
   }
 
@@ -150,9 +150,10 @@ public class Coin {
    * Returns "heads" or "tails"
    ***/
   public String flip() {
+    double bias = this.bias;
     Random random = new Random();
     double coinFlip = random.nextDouble(); // generates double between 0 and 1
-    if (coinFlip >= 0.5) {
+    if (coinFlip <= bias) {
       headsCtr += 1;
       upFace = "heads";
     } else {
@@ -170,16 +171,7 @@ public class Coin {
    * or both showing tails. False otherwise.
    ***/
   public boolean equals(Coin other) {
-    if ((other.name != "heads") || (other.name != "tails")) {
-      if (upFace == other.upFace) {
-      return true; 
-      } else {
-      return false; 
-      }
-    } else {
-      return false;
-    }
-  }
+    return this.upFace == other.upFace; // compares this coin to other coin up face value
 
   /***
    * String toString() -- overrides toString() provided by Java
@@ -187,7 +179,7 @@ public class Coin {
    * postcond: Return String comprised of name and current face
    ***/
   public String toString() {
-    return name + " -- " + upFace; 
+    return name + " -- " + upFace;
   }
 
 }//end class
