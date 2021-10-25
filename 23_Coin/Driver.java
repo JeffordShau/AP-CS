@@ -1,3 +1,21 @@
+/*
+JJ: (Jefford Shau and Jomin Zhang )
+APCS
+HW23 -- Coins
+2020-10-22
+time spent: 1.1 hours
+ */
+
+/*
+DISCO:
+  0. Implemented the Math.random into my code to randomize the coin flips.
+  1. "this" keyword refers to the current object in the invocation of the Driver line.
+  2. Found that using Math.random was easier to use than importing random class.
+QCC:
+  0. How do you check if an object exists without producing an error?
+  1. When is it better to import the random class than use Math.random?
+*/
+
 /***
     driver for class Coin
     ~~~ SUGGESTED WORKFLOW: ~~~
@@ -33,7 +51,7 @@ public class Driver {
       wayne.flip();
       System.out.println("yours: " + yours);
       System.out.println("wayne: " + wayne);
-      
+
       //test equals() method
       if ( yours.equals(wayne) ) {
         System.out.println( "Matchee matchee!" );
