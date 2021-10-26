@@ -6,13 +6,15 @@ HW24 -- While Loop
 time spent: 0.8 hours
  */
 
-/*
-DISCO: 
-  0. Incorporated while loops into our code to terminate under the given boolean expressions. 
-  1. Trying to access private instance variables results in error. 
-QCC:
-  0. How can we answer the third problem by only using 1 while loop instead of 2? 
-*/
+ /*
+ DISCO:
+   0. Incorporated while loops into our code to terminate under the given boolean expressions.
+   1. Trying to access private instance variables results in error.
+ QCC:
+   0. How can we answer the third problem by only using 1 while loop instead of 2?
+ Post-v0 Mods:
+   0. Changed the construtor codes to refer to the rest method. This avoids initializing the instance variables twice.
+ */
 
 public class Coin {
   private double value; // monetary worth
@@ -29,13 +31,7 @@ public class Coin {
    *  postcond:
    ***/
   public Coin() {
-    name = "null";
-    flipCtr = 0;
-    headsCtr = 0;
-    tailsCtr = 0;
-    bias = 0.5;
-    upFace = "heads";
-    value = 0;
+    reset("heads", 0.5);
   }
 
   /***
@@ -50,12 +46,8 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s ) {
+    reset("heads", 0.5);
     name = s;
-    flipCtr = 0;
-    headsCtr = 0;
-    tailsCtr = 0;
-    bias = 0.5;
-    upFace = "heads";
     value = assignValue(s);
   }
 
@@ -65,12 +57,8 @@ public class Coin {
       postcond:
   ***/
   public Coin( String s, String nowFace ) {
+    reset(nowFace, 0.5);
     name = s;
-    flipCtr = 0;
-    headsCtr = 0;
-    tailsCtr = 0;
-    bias = 0.5;
-    upFace = nowFace;
     value = assignValue(s);
   }
   // Accessors...
