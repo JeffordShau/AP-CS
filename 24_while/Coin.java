@@ -1,16 +1,17 @@
 /*
 JJ: (Jefford Shau and Jomin Zhang )
 APCS
-HW24 -- While
-2020-10-25
-time spent:  hours
+HW24 -- While Loop
+2020-10-22
+time spent: 0.8 hours
  */
 
 /*
-DISCO:
-  0. 
+DISCO: 
+  0. Incorporated while loops into our code to terminate under the given boolean expressions. 
+  1. Trying to access private instance variables results in error. 
 QCC:
-  0. 
+  0. How can we answer the third problem by only using 1 while loop instead of 2? 
 */
 
 public class Coin {
