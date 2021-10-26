@@ -1,19 +1,17 @@
 /*
 JJ: (Jefford Shau and Jomin Zhang )
 APCS
-HW23 -- Coins
+HW24 -- While Loop
 2020-10-22
-time spent: 1.1 hours
+time spent: 0.8 hours
  */
 
 /*
-DISCO:
-  0. Implemented the Math.random into my code to randomize the coin flips.
-  1. "this" keyword refers to the current object in the invocation of the Driver line.
-  2. Found that using Math.random was easier to use than importing random class.
+DISCO: 
+  0. Incorporated while loops into our code to terminate under the given boolean expressions. 
+  1. Trying to access private instance variables results in error. 
 QCC:
-  0. How do you check if an object exists without producing an error?
-  1. When is it better to import the random class than use Math.random?
+  0. How can we answer the third problem by only using 1 while loop instead of 2? 
 */
 
 /***
@@ -32,65 +30,67 @@ public class Driver {
 
   public static void main( String[] args ) {
 
-    //build Objects from blueprint specified by class Coin
-
-
-    //test default constructor
-      Coin mine = new Coin();
-      //test 1st overloaded constructor
-      Coin yours = new Coin( "quarter" );
-      //test 2nd overloaded constructor
-      Coin wayne = new Coin( "dollar", "heads" );
-      //test toString() methods of each Coin
-      System.out.println("mine: " + mine);
-      System.out.println("yours: " + yours);
-      System.out.println("wayne: " + wayne);
-      //test flip() method
-      System.out.println("\nAfter flipping...");
-      yours.flip();
-      wayne.flip();
-      System.out.println("yours: " + yours);
-      System.out.println("wayne: " + wayne);
-
-      //test equals() method
-      if ( yours.equals(wayne) ) {
-        System.out.println( "Matchee matchee!" );
-      }
-      else {
-        System.out.println( "No match. Firestarter you can not be." );
-      }
-
       // Flip until x amount of heads appears
-      int counter = 0;
-      while (counter < 10) {
-        if (yours.flip() == "heads"){
-          counter += 1;
-          System.out.println("Heads: "+ yours.getHeadsCtr());
+      Coin bob = new Coin();
+      Coin cod = new Coin();
+      int flipMin = 50;
+      int flipsCounter = 0;
+      int headsCounter = 0;
+      while (headsCounter < flipMin) {
+        bob.flip();
+        cod.flip();
+        flipsCounter += 2;
+        if (bob.flip() == "heads") {
+          headsCounter += 1;
+        }
+        if (cod.flip() == "heads") {
+          headsCounter += 1;
         }
       }
+     System.out.println("Total Flip Count: "+ flipsCounter);
+     System.out.println("Heads Count: "+ headsCounter);
+
       //Flip until y amount of matches
-      counter = 0;
-      while (counter < 10){
-        yours.flip();
-        wayne.flip();
-        if ( yours.equals(wayne) ) {
-          counter +=1;
-          System.out.println("Matchee matchee!");
+      bob.reset("heads", 0.5);
+      flipMin = 50;
+      flipsCounter = 0;
+      headsCounter = 0;
+      int matches = 0;
+      while (matches < flipMin){
+        bob.flip();
+        cod.flip();
+        flipsCounter += 2;
+        if (bob.equals(cod) ) {
+          matches += 1;
         }
       }
+      System.out.println("Matchee matchee!");
+      System.out.println("Total Flip Count: "+ flipsCounter);
+      System.out.println("Total Matchees: " + matches);
+
       //Flip until 65536 matches have occured and hte number of matches is divisible by the year of your birth
-      counter = 0;
-      while ((counter < 65536) && (counter % 2004 != 0)){
-        yours.flip();
-        wayne.flip();
-        counter +=1;
-        if ( yours.equals(wayne) ) {
-          yours.flipCtr += 1;
+      flipsCounter = 0;
+      headsCounter = 0;
+      matches = 1;
+      while (matches < 65536) {
+        bob.flip();
+        cod.flip();
+        flipsCounter += 2;
+        if (bob.equals(cod) ) {
+          matches += 1;
         }
       }
-      System.out.println(counter);  
-
-
+      while (matches % 2005 != 0) {
+        bob.flip();
+        cod.flip();
+        flipsCounter += 2;
+        if (bob.equals(cod) ) {
+          matches += 1;
+        }
+      }
+      System.out.println("Matchee matchee!");
+      System.out.println("Total Matchees: " + matches);
+      System.out.println("Total Flip Count: "+ flipsCounter);
 
   }//end main()
 
