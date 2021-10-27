@@ -23,18 +23,18 @@ public class Stats{
   public static int gcd(int a, int b){
 	  int counter = 0;
 		int GCD;
-    if (a > b) {
-      int smaller = a; 
-    } else {
-      int smaller = b;
-    }
-		while (counter < smaller) {
-			counter += 1;
-			if (a % counter == 0 && b % counter == 0) {
-				GCD = counter;
-			}
+	  if (a > b) {
+		  int smaller = a; 
+	  } else {
+		  int smaller = b;
+	  }
+	  while (counter < smaller) {
+		counter += 1;
+		if (a % counter == 0 && b % counter == 0) {
+			GCD = counter;
 		}
-		return GCD;
+	}
+	return GCD;
   }
   
 	 public static int gcdER(int a, int b) {
