@@ -30,7 +30,7 @@ public class Stats{
     }
 		while (counter < smaller) {
 			counter += 1;
-			if (a % counter == 0) and (b % counter == 0) {
+			if (a % counter == 0) && (b % counter == 0) {
 				GCD = counter;
 			}
 		}
