@@ -15,6 +15,9 @@ ALGO:
 
 */
 
+/*
+precond: a and b are positive integers
+*/
 public class Stats{
 
   public static int gcd(int a, int b){
@@ -34,28 +37,34 @@ public class Stats{
 		return GCD;
   }
   
-	 public static int gcd(int a, int b){
-		if (a == b){
+	 public static int gcd(int a, int b) {
+		if (a == b) {
 			return a;
 		} else {
 		if (a < b) {
-			gcd(a , b - a);
-		} else{
+		  gcd(a , b - a);
+		} else {
 		  gcd(a - b, b);
     }
     }
    }
   
-	public static int gcd(int a, int b){
-		while (a!=b){
-			if (a>b){
-				a=a-b;
+	public static int gcd(int a, int b) {
+		while (a != b) {
+			if (a > b) {
+				a = a - b;
+			} else {
+				b = b - a;
 			}
-			else{
-				b=b-a;
-			}
-		        gcd(a,b);
-			}
-		return a;
 		}
+		return a;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(gcd(15, 38));
+		System.out.println(gcd(9, 9));
+		System.out.println(gcd(1, 2));
+		System.out.println(gcd(1, 1));
+	
+	}
 }
