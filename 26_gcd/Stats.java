@@ -37,7 +37,7 @@ public class Stats{
 		return GCD;
   }
   
-	 public static int gcd(int a, int b) {
+	 public static int gcdER(int a, int b) {
 		if (a == b) {
 			return a;
 		} else {
@@ -49,7 +49,7 @@ public class Stats{
     }
    }
   
-	public static int gcd(int a, int b) {
+	public static int gcdEW(int a, int b) {
 		while (a != b) {
 			if (a > b) {
 				a = a - b;
@@ -65,6 +65,14 @@ public class Stats{
 		System.out.println(gcd(9, 9));
 		System.out.println(gcd(1, 2));
 		System.out.println(gcd(1, 1));
+		System.out.println(gcdER(15, 38));
+		System.out.println(gcdER(9, 9));
+		System.out.println(gcdER(1, 2));
+		System.out.println(gcdER(1, 1));
+		System.out.println(gcdEW(15, 38));
+		System.out.println(gcdEW(9, 9));
+		System.out.println(gcdEW(1, 2));
+		System.out.println(gcdEW(1, 1));
 	
 	}
 }
