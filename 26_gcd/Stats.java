@@ -66,3 +66,5 @@ public class Stats {
         System.out.println("the gcd of 15 and 38 is: " + gcdEW(15, 38));
         System.out.println("the gcd of 15 and 30 is: " + gcdEW(15, 30));
         System.out.println("the gcd of 15 and 15 is: " + gcdEW(15, 15));
+    }
+}
