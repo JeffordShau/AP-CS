@@ -16,9 +16,9 @@ public class Stats {
         int gcd = 0;
         int lower = 0; 
         if (a > b) {
-            int lower = b;
+            lower = b;
         } else {
-            int lower = a;
+            lower = a;
         }
         while (counter < lower) {
             counter++;
