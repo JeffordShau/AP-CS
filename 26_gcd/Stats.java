@@ -10,13 +10,17 @@ UNRESOLVED QUESTIONS
 ALGO
 */
 
-import java.lang.Math;
-
 public class Stats {
     public static int gcd (int a, int b){
         int counter = 0;
         int gcd = 0;
-        while (counter < (a + b)) {
+        int lower = 0; 
+        if (a > b) {
+            int lower = b;
+        } else {
+            int lower = a;
+        }
+        while (counter < lower) {
             counter++;
             if (a % counter == 0 && b % counter == 0) {
                 gcd = counter;
