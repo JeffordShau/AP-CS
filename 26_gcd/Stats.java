@@ -6,8 +6,12 @@
 
 /*
 DISCOVERIES
+    0. The brute-force method required more work and code than the recursive and the while loop methods. 
+    1. This method of GCD does not work with zero or negative numbers, so we set the pre-condition of a and b to accept positive integers only. 
 UNRESOLVED QUESTIONS
+    0. 
 ALGO
+    0. 
 */
 
 public class Stats {
