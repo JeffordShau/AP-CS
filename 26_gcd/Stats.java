@@ -24,7 +24,6 @@ import java.lang.Math;
 
 public class Stats {
     
-    public class Stats {
     public static int mean(int a, int b) {
         return (a + b) / 2;
     }
