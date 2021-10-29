@@ -9,6 +9,8 @@ DISCO
 0. When you want to use double quotation marks within a string, you must use \ before it to indicate to Java that it is not a part of the syntax.
 1. The String.substring() method is overloaded: it can either take a single integer indicating its index and returns a String from that point to the end of the String, inclusive.
    It can also take two integers, determining the start and end index of the String to be returned, inclusive and exclusive, respectively.
+s.substring() indexing begins at 0 and its startIndex is inclusive while its endIndex is exclusive.
+s.length() begins at 1, returns length of the string.
 QCC
 0. Why did Java decide to make the second int parameter of String.substring() exclusive?
 1. In what scenario would you want to use a while loop instead of a for loop?
@@ -40,7 +42,7 @@ public class Rof{
       return s;
     }
     else{ // recursive reduction
-      return s.substring(s.length() - 1, s.length()) + reverseR(s.substring(1, s.length() - 1));
+      return s.substring(s.length() - 1, s.length()) + reverseR(s.substring(0, s.length() - 1));
     }
   }
 
