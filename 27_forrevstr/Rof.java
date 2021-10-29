@@ -40,7 +40,7 @@ public class Rof{
       return s;
     }
     else{ // recursive reduction
-      return s.substring(s.length() - 1, s.length()) + reverseR(s.substring(0, s.length() - 1));
+      return s.substring(s.length() - 1, s.length()) + reverseR(s.substring(1, s.length() - 1));
     }
   }
 
