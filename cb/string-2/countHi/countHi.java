@@ -6,7 +6,7 @@ HW28 -- Coding Bat
 */
 
 /*
-Given a string, return a string where for every char in the original, there are two chars.
+Return the number of times that the string "hi" appears anywhere in the given string.
 */
 
 public class countHi {
