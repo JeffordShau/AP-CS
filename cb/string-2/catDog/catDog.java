@@ -28,13 +28,9 @@ public class catDog {
 }
 
   public static void main(String[] args) {
-    System.out.println("Suppose to return true");
-    System.out.println(catDog("catdog"));
-    System.out.println("Suppose to return false");
-    System.out.println(catDog("catcat"));
-    System.out.println("Suppose to return true");
-    System.out.println(catDog("1cat1cadodog"));
-    System.out.println("Suppose to return true");
-    System.out.println(catDog("catcat"));
+    System.out.println(catDog("catdog")); // -> "true"
+    System.out.println(catDog("catcat")); // -> "false"
+    System.out.println(catDog("1cat1cadodog")); // -> "true"
+    System.out.println(catDog("catcat")); // -> "true"
   }
 }
