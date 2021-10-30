@@ -6,7 +6,7 @@ HW28 -- Coding Bat
 */
 
 /*
-Given a string, return a string where for every char in the original, there are two chars.
+Given two strings, a and b, return the result of putting them together in the order abba, e.g. "Hi" and "Bye" returns "HiByeByeHi".
 */
 
 public class makeAbba {
