@@ -25,8 +25,6 @@ public class countHi {
     return catCounter == dogCounter;
 }
 
-}
-
   public static void main(String[] args) {
     System.out.println(helloName("Bob")); // → "Hello Bob!"
     System.out.println(helloName("Alice")); // → "Hello Alice!"
