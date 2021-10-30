@@ -9,7 +9,7 @@ HW28 -- Coding Bat
 Given a string, return a string where for every char in the original, there are two chars.
 */
 
-public class doubleChar {
+public class makeAbba {
 
   public String makeAbba(String a, String b) {
     return a + b + b + a;
