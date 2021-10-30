@@ -23,11 +23,8 @@ public class doubleChar {
 }
 
   public static void main(String[] args) {
-    System.out.println("Suppose to return: TThhee");
-    System.out.println(doubleChar("The"));
-    System.out.println("Suppose to return: AAAAbbbb");
-    System.out.println(doubleChar("AAbb"));
-    System.out.println("Suppose to return: TThheerree");
-    System.out.println(doubleChar("Hi-There"));
+    System.out.println(doubleChar("The")); // -> "TThhee"
+    System.out.println(doubleChar("AAbb")); // -> "AAAAbbbb"
+    System.out.println(doubleChar("Hi-There")); // -> "TThheerree"
   }
 }
