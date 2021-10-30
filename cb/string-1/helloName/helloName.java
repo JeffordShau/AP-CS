@@ -9,7 +9,7 @@ HW28 -- Coding Bat
 Given a string, return a string where for every char in the original, there are two chars.
 */
 
-public class doubleChar {
+public class helloName {
 
   public String helloName(String name) {
   return "Hello " + name + "!";
