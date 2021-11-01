@@ -41,7 +41,7 @@ public class Commafier {
 
         if (numberStringLength % 3 != 0) {
             commaedString = numberString.substring(0, numberStringLength % 3) + ",";
-        for (count = 0; count <= numberStringLength / 3; count++) {
+        for (int count = 0; count <= numberStringLength / 3; count++) {
             commaedString = commaedString + numberString.substring(3 * count, 3 * (count + 1));
             }
         }
