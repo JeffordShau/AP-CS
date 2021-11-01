@@ -14,7 +14,7 @@ UNRESOLVED QUESTIONS
 
 public class Commafier {
     public static void main(String[] args) {
-        /*
+        
         System.out.println(commafyF(1));
         System.out.println(commafyF(10));
         System.out.println(commafyF(101));
@@ -25,7 +25,7 @@ public class Commafier {
         System.out.println(commafyR(101));
         System.out.println(commafyR(1000));
         System.out.println(commafyR(12345));
-        */
+        
 
         for (String arg : args) {
             System.out.println(commafyF(Integer.parseInt(arg)));
