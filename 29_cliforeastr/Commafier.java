@@ -39,10 +39,13 @@ public class Commafier {
         
         int numberStringLength = numberString.length();
 
-        if (numberStringLength % 3 != 0) {
+        
+        if (numberStringLength > 3) {
+            if (numberStringLength % 3 != 0) {
             commaedString = numberString.substring(0, numberStringLength % 3) + ",";
-        for (int count = 0; count <= numberStringLength / 3; count++) {
-            commaedString = commaedString + numberString.substring(3 * count, 3 * (count + 1));
+            }
+            for (int count = 0; count <= numberStringLength / 3; count++) {
+                commaedString = commaedString + numberString.substring(3 * count, 3 * (count + 1)) + ",";
             }
         }
         return commaedString; 
