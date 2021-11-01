@@ -35,19 +35,18 @@ public class Commafier {
 
     public static String commafyF(int n) {
         String numberString = "" + n;
-        String commaedString = "";
+        String commaedString;
+        
+        int numberStringLength = numberString.length();
 
-        int lolz = numberString.length();
-
-        while (lolz > 3) {
-            commaedString = "," + numberString.substring(lolz - 3, lolz) + commaedString;
-            lolz -= 3;
+        if (numberStringLength % 3 != 0) {
+            commaedString = numberString.substring(0, numberStringLength % 3) + ",";
+        for (count = 0; count <= numberStringLength / 3; count++) {
+            commaedString = commaedString + numberString.substring(3 * count, 3 * (count + 1));
+            }
         }
-
-        commaedString = numberString.substring(0, lolz) + commaedString;
-
-        return commaedString;
-    }
+        return commaedString; 
+                    
 
     public static String commafyR(int n) {
         if (n < 1000) {
