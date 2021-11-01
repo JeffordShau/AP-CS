@@ -35,7 +35,7 @@ public class Commafier {
 
     public static String commafyF(int n) {
         String numberString = "" + n;
-        String commaedString;
+        String commaedString = "";
         
         int numberStringLength = numberString.length();
 
