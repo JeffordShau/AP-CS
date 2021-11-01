@@ -12,7 +12,7 @@ UNRESOLVED QUESTIONS
     0.
 */
 
-public class Main {
+public class Commafier {
     public static void main(String[] args) {
         /*
         System.out.println(commafyF(1));
