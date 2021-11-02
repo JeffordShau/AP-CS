@@ -6,9 +6,10 @@
 
 /*
 DISCOVERIES
-    0.
+    0. We found out a way to use modulus into our iteration code. 
+    1. We decided a for loop was more suitable than a while loop for the iteration part of this problem. 
 UNRESOLVED QUESTIONS
-    0.
+    0. What is the difference between Integer.parseInt(arg) and (int)arg? 
 */
 
 public class Commafier {
