@@ -6,15 +6,15 @@
 
 /*
 DISCOVERIES
-    0. We found out a way to use modulus into our iteration code. 
-    1. We decided a for loop was more suitable than a while loop for the iteration part of this problem. 
+    0. We decided a for loop was more suitable than a while loop for the iteration part of this problem.
+    1. It is possible to convert an int by adding a empty string to it.
 UNRESOLVED QUESTIONS
-    0. What is the difference between Integer.parseInt(arg) and (int)arg? 
+    0. What is the difference between Integer.parseInt(arg) and (int)arg?
 */
 
 public class Commafier {
     public static void main(String[] args) {
-
+        /*
         System.out.println(commafyF(1));
         System.out.println(commafyF(10));
         System.out.println(commafyF(101));
@@ -25,33 +25,26 @@ public class Commafier {
         System.out.println(commafyR(101));
         System.out.println(commafyR(1000));
         System.out.println(commafyR(12345));
-
+        */
 
         for (String arg : args) {
-            System.out.println(commafyF(Integer.parseInt(arg)));
-            System.out.println(commafyR(Integer.parseInt(arg)));
+            System.out.println("commafyF(" + arg + ") -> " + commafyF(Integer.parseInt(arg)));
+            System.out.println("commafyR(" + arg + ") -> " + commafyR(Integer.parseInt(arg)));
         }
     }
 
     public static String commafyF(int n) {
-        String numberString = "" + n;
-        String commaedString = "";
+        String nString = "" + n;
+        String commaedN = "";
 
-        int numberStringLength = numberString.length();
-        int leadingDigits = numberStringLength % 3;
-        int periods = numberStringLength / 3;
-
-        if (numberStringLength > 3) {
-            if (leadingDigits != 0) {
-            commaedString = numberString.substring(0, leadingDigits);
-            }
-            for (int count = 0; count < periods; count++) {
-                commaedString = commaedString + "," + numberString.substring(leadingDigits + 3 * count, leadingDigits + 3 * (count + 1));
-            }
-            return commaedString;
-        } else {
-          return numberString;
+        for (int i = nString.length(); i > 3; i-=3) {
+            // add the last three "places" of nString following a comma to the beginning of commaedN
+            commaedN = "," + nString.substring(i - 3) + commaedN;
+            // remove the last three "places" of nString from nString
+            nString = nString.substring(0, i - 3);
         }
+        // add whatever is left in nString to commaedN and return it
+        return nString + commaedN;
     }
 
 
