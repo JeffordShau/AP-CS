@@ -6,21 +6,22 @@
 
 /*
 DISCOVERIES
-    0. 
+    0.
 
 UNRESOLVED QUESTIONS
     0. Where is the translator method?
 */
 
+/***
  * class Pig
  * a Pig Latin translator
- * ~~~~~~~~~~~~~~~~~~~ SKELETON ~~~~~~~~~~~~~~~~~~~
+ * ~~~~~~~~~~~~~~~~~ SKELETON ~~~~~~~~~~~~~~~~~
  *           9
  *     ,--.-'-,--.
  *     \  /-~-\  /
  *    / )' a a `( \
  *   ( (  ,---.  ) )
- *    \ `(_o_o_)' /
+ *    \ `(o_o)' /
  *     \   `-'   /
  *      | |---| |
  *      [_]   [_]
