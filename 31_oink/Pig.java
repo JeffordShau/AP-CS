@@ -75,6 +75,7 @@ public class Pig
      if (isAVowel(w.substring(i, i+1))) {
        counter++;
      }
+    }
     return counter;
   }
 
