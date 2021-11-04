@@ -88,7 +88,7 @@ public class Pig
   public static boolean hasAVowel( String w ) 
   {
     if (countVowels > 0) { 
-      return true
+      return true;
       }
     return false; 
   }
@@ -109,6 +109,7 @@ public class Pig
       vowels += w.substring(i, i+1);
      }
     return vowels;
+    }
   }
 
 
