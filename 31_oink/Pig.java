@@ -6,10 +6,12 @@
 
 /*
 DISCOVERIES
-    0.
+    0. We were efficient by calling the other methods. We did not have to repeat unneccesary code twice.
+    1. We incorporated the built-in Java method indexOf() in our hasA method. 
 
 UNRESOLVED QUESTIONS
     0. Where is the translator method?
+    1. How will this code help us with our pig latin translator? 
 */
 
 /***
