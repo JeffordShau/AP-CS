@@ -11,7 +11,6 @@ UNRESOLVED QUESTIONS
     0. Are we allowed to modify final variables in future versions?
         ex: VOWELS to AaEeIiOoUuYy
     1. How do we implement the DemoScanner to take in lines from in.words?
-    2. How do we know if a y in a string is a vowel?
     3. What constitutes a word as having multiple consonants at the beginning of the word?
 */
 
@@ -183,8 +182,9 @@ public class Pig
         post: engToPig("apple")  --> "appleway"
         engToPig("strong") --> "ongstray"
         engToPig("java")   --> "avajay"
+	COPIED FROM MYKOLYK HW31 SOLUTIONS
         **/
-  public static String engToPig( String w ) {
+  public static String engToPig( String w ) { 
     String ans = "";
     if ( beginsWithVowel(w) )
       ans = w + "way";
