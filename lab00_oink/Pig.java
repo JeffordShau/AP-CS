@@ -7,6 +7,7 @@
 /*
 DISCOVERIES
     0. We changed method endToPig to support phrases, capitalization, multiple consonants, and punctuation. 
+    1. The punctuation on the end of our translated engToPig is reversed. 
 UNRESOLVED QUESTIONS
     0. How do we know if a y in a string is a vowel? (asked on Piazza)
     1. How do we handle punctuation in the middle of a word?
