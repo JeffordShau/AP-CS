@@ -3,18 +3,21 @@
 APCS
 HW34 -- A Pirate's Life for Me
 2021-11-12
+time spent: 0.5 hr
 */
 
 /*
 DISCO:
-  0.
+  0. We implemented our own slice method to return an array with 1 less element.
 QCC:
-  0.
+  0. How can you implement a counter to a recursive method without adding it to the arguments?
+  1. How can you track the index of the target(s) without a counter for recursive methods? 
 */
 
 import java.util.Arrays;
 
 public class Loopier {
+
   public static int[] init(int[] array) {
     for(int i = 0; i < array.length; i ++) {
       array[i] = (int)(Math.random() * 64920);
@@ -42,20 +45,29 @@ public class Loopier {
     return -1;
   }
 
-  public static int linSearchR(int[] a, int target) {
-    int idx = a.length;
+  public static int linSearchR(int[] a, int target, int counter) {
     if (a[0] == target) {
-      return idx;
+      return counter;
     }
     else if (a.length == 1) {
       return -1;
     }
     else {
-      idx -= 1;
-      a = Arrays.copyOf(a, a.length - 1);
-      return linSearchR(a, target);
+      counter += 1;
+      a = Sliceby1(a);
+      return linSearchR(a, target, counter);
     }
   }
+
+  public static int[] Sliceby1(int[] a) {
+    int[] sliced = new int[a.length - 1];
+    for(int i = 1; i < a.length; i++) {
+      sliced[i - 1] = a[i];
+    }
+    return sliced;
+  }
+
+  // public static
 
   public static int freq(int[] a, int target) {
     int counter = 0;
@@ -66,6 +78,19 @@ public class Loopier {
     }
     return counter;
   }
+
+  public static int freqRec(int[] a, int target, int counter) {
+    if (a[0] == target) {
+      counter += 1;
+    }
+    if (a.length != 1) {
+      a = Sliceby1(a);
+      return freqRec(a, target, counter);
+    }
+    return counter;
+  }
+
+
 
   public static void main(String[] args) {
     //test init and toString method
@@ -78,29 +103,18 @@ public class Loopier {
 
     //test linSearch methods
     int[] linSearch1 = {1, 3, 5, 7, 9};
+    System.out.println("Linear Search Iteration");
     System.out.println(linSearch(linSearch1, 7));
-    // System.out.println(linSearchR(linSearch1, 7));
+    System.out.println("Linear Search Recursion");
+    System.out.println(linSearchR(linSearch1, 7, 0));
 
     //test freq methods
-    int[] freq1 = {1, 1, 5, 6, 8, 9, 9, 1, 9, 6, 1, 1, 10};
-    System.out.println(freq(freq1, 9));
-    System.out.println(freq(freq1, 1));
-
+    int[] freq1 = {1, 1, 5, 6, 8, 9, 9, 1, 9, 6, 6, 6, 1, 1, 10};
+    System.out.println("Frequency Iteration");
+    System.out.println(freq(freq1, 6));
+    System.out.println(freq(freq1, 5));
+    System.out.println("Frequency Recursion");
+    System.out.println(freqRec(freq1, 6, 0));
+    System.out.println(freqRec(freq1, 5, 0));
   }
-
-
 }
-
-
-
-/*
-
-Two public, static implementations of a linear search function that will return the index of the first occurrence of a target in an existing array, or -1 if not found. (First version iterates, second recurses.)
-
- int linSearch( int[] a, int target )
- int linSearchR( int[] a, int target )
-Two public, static implementations of a frequency function that will return the number of occurrences of a target in an existing array. (First version iterates, second recurses.)
-
- int freq( int[] a, int target )
- int freqRec( int[] a, int target )
- */
