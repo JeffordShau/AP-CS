@@ -1,17 +1,18 @@
 /*
-(Jefford Shau, William Vongphanith, Jacob Kirmayer)
+(Jefford Shau "Dylan")
 APCS
 HW34 -- A Pirate's Life for Me
 2021-11-12
-time spent: 0.5 hr
+time spent: 1.5 hrs
 */
 
 /*
 DISCO:
-  0. We implemented our own slice method to return an array with 1 less element.
+  0. I implemented my own slice method to return an array with 1 less element.
+  1. The idx counter in my recursive methods did not reset to 0 after every recursive call.
 QCC:
-  0. How can you implement a counter to a recursive method without adding it to the arguments?
-  1. How can you track the index of the target(s) without a counter for recursive methods? 
+  0. Why did the idx counter not reset to 0 after every recursive call?
+  1. Is there a way to slice an array without having to write a method for it?
 */
 
 import java.util.Arrays;
@@ -45,18 +46,22 @@ public class Loopier {
     return -1;
   }
 
-  public static int linSearchR(int[] a, int target, int counter) {
-    if (a[0] == target) {
-      return counter;
-    }
-    else if (a.length == 1) {
+  public static int linSearchR(int[] a, int target) {
+    int idx = 0;
+    if (a.length == 0) {
       return -1;
     }
-    else {
-      counter += 1;
-      a = Sliceby1(a);
-      return linSearchR(a, target, counter);
+    if (a[0] == target) {
+      return idx;
     }
+    if (a.length > 0) {
+      idx += 1;
+      a = Sliceby1(a);
+      if (linSearchR(a, target) != -1) { // for test 4
+        return idx + linSearchR(a, target);
+      }
+    }
+    return -1;
   }
 
   public static int[] Sliceby1(int[] a) {
@@ -66,8 +71,6 @@ public class Loopier {
     }
     return sliced;
   }
-
-  // public static
 
   public static int freq(int[] a, int target) {
     int counter = 0;
@@ -79,18 +82,24 @@ public class Loopier {
     return counter;
   }
 
-  public static int freqRec(int[] a, int target, int counter) {
-    if (a[0] == target) {
-      counter += 1;
+
+  public static int freqRec(int[] a, int target) {
+    int idx = 0;
+    if (a.length == 0) {
+      return idx;
     }
-    if (a.length != 1) {
-      a = Sliceby1(a);
-      return freqRec(a, target, counter);
+    else {
+      if (a[0] == target) {
+        idx += 1;
+        a = Sliceby1(a);
+        return idx + freqRec(a, target);
+      }
+      else {
+        a = Sliceby1(a);
+        return idx + freqRec(a, target);
+      }
     }
-    return counter;
   }
-
-
 
   public static void main(String[] args) {
     //test init and toString method
@@ -103,18 +112,35 @@ public class Loopier {
 
     //test linSearch methods
     int[] linSearch1 = {1, 3, 5, 7, 9};
+    int[] linSearch2 = {};
+    int[] linSearch3 = {5};
     System.out.println("Linear Search Iteration");
     System.out.println(linSearch(linSearch1, 7));
+    System.out.println(linSearch(linSearch2, 5));
+    System.out.println(linSearch(linSearch3, 5));
+    System.out.println(linSearch(linSearch3, 3));
     System.out.println("Linear Search Recursion");
-    System.out.println(linSearchR(linSearch1, 7, 0));
+    System.out.println(linSearchR(linSearch1, 7));
+    System.out.println(linSearchR(linSearch2, 5));
+    System.out.println(linSearchR(linSearch3, 5));
+    System.out.println(linSearchR(linSearch3, 3));
 
     //test freq methods
     int[] freq1 = {1, 1, 5, 6, 8, 9, 9, 1, 9, 6, 6, 6, 1, 1, 10};
+    int[] freq2 = {};
+    int[] freq3 = {1};
     System.out.println("Frequency Iteration");
     System.out.println(freq(freq1, 6));
     System.out.println(freq(freq1, 5));
+    System.out.println(freq(freq2, 7));
+    System.out.println(freq(freq3, 5));
+    System.out.println(freq(freq3, 1));
     System.out.println("Frequency Recursion");
-    System.out.println(freqRec(freq1, 6, 0));
-    System.out.println(freqRec(freq1, 5, 0));
+    System.out.println(freqRec(freq1, 6));
+    System.out.println(freqRec(freq1, 5));
+    System.out.println(freqRec(freq2, 7));
+    System.out.println(freqRec(freq3, 5));
+    System.out.println(freqRec(freq3, 1));
   }
 }
+
