@@ -8,9 +8,9 @@ time spent: 0.5 hrs
 
 /*
 DISCO:
-  0. 
+  0. The line import java.util.Arrays was unnecessary. The code ran without the Arrays class. 
 QCC:
-  0. 
+  0. How would you slice an array from the last index instead of from the first index? 
 */
 
 public class Loopier {
