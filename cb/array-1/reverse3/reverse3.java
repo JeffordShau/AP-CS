@@ -11,3 +11,5 @@ public class reverse3 {
     System.out.println(reverse3([1, 2, 3]); // [3, 2, 1]
     System.out.println(reverse3([5, 11, 9]); // [9,11, 5]
     System.out.println(reverse3([7, 0, 0]); // [0, 0, 7]
+ }
+                       }
