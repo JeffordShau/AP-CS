@@ -18,4 +18,6 @@ public class sum2 {
     System.out.println(sum2([1, 2, 3]); // 3
     System.out.println(sum2([1, 1]); // 2
     System.out.println(sum2([1, 1, 1, 1]); // 2
-      
+       }
+                       }
+
