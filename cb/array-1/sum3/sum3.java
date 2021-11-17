@@ -11,3 +11,5 @@ public class sum3 {
     System.out.println(sums([1, 2, 3]); // 6
     System.out.println(sums([5, 11, 2]); // 18
     System.out.println(sums([7, 0, 0]); // 7            
+                       }
+                       }
