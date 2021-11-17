@@ -11,3 +11,5 @@ public class has23 {
     System.out.println(has23([2, 5]); // true
     System.out.println(has23([4, 3]); // true
     System.out.println(has23([4, 5]); // false
+                        }
+                       }
