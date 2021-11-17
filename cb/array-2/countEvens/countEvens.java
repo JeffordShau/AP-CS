@@ -17,3 +17,5 @@ public class countEvens {
     System.out.println(countEvens([2, 1, 2, 3, 4]); // 3
     System.out.println(countEvens([2, 2, 0]); // 0
     System.out.println(countEvens([1, 3, 5]); // 0
+                       }
+                       }
