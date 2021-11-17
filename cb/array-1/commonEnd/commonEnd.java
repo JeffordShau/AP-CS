@@ -11,3 +11,5 @@ public class commonEnd {
     System.out.println(commonEnd([1, 2, 3], [7, 3]); // true
     System.out.println(commonEnd([1, 2, 3], [7, 3, 2]); // false
     System.out.println(commonEnd([1, 2, 3], [1, 3]); // true
+ }
+                       }
