@@ -11,3 +11,5 @@ public class no23 {
     System.out.println(no23([4, 5]); // true
     System.out.println(no23([4, 2]); // false
     System.out.println(no23([3, 5]); // false
+ }
+                       }
