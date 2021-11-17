@@ -10,3 +10,5 @@ public class firstLast6 {
     System.out.println(firstLast6([1, 2, 6])); // true
     System.out.println(firstLast6([6, 1, 2, 3])); // true
     System.out.println(firstLast6([13, 6, 1, 2, 3])); // false
+ }
+                       }
