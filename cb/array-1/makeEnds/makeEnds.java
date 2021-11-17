@@ -11,3 +11,5 @@ public class makeEnds {
     System.out.println(makeEnds([1, 2, 3]); // [1, 3]
     System.out.println(makeEnds([1, 2, 3, 4]); // [1, 4]
     System.out.println(makeEnds([7, 4, 6, 2]); // [7, 2]
+                        }
+                       }
