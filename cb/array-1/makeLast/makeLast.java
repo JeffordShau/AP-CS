@@ -13,3 +13,5 @@ public class makeLast {
     System.out.println(makeLast([4, 5, 6]); // [0, 0, 0, 0, 0, 6]
     System.out.println(makeLast([1, 2]); // [0, 0, 0, 2]
     System.out.println(makeLast([3]); // [0, 3]
+  }
+                       }
