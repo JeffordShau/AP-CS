@@ -3,7 +3,14 @@ SoloJ (Jefford Shau & "Dylan the Duckie")
 APCS
 HW38 -- Spin Class
 2021-11-17
-time spent: 0.4 hr
+time spent: 0.5 hr
+*/
+
+/*
+DISCO:
+	0. I used the Math.random() method on the spinOnce method.
+QCC:
+	0. Is it necessary to iterate through the whole array in the spinOnce method when only the first three fruits in the array are being checked in jackpot() and miniWin()?
 */
 
 public class Slots {
@@ -27,7 +34,7 @@ public class Slots {
     		"apple",
     		"banana",
     		"banana",
-   		"banana",
+    		"banana",
 		"peach",
 		"peach",
 		"peach"
@@ -44,8 +51,8 @@ public class Slots {
 	public Slots() {
 
 		_fruits = new String[FRUITS.length];
-    for(int i = 0; i < FRUITS.length; i++) {
-      _fruits[i] = FRUITS[i];
+    		for(int i = 0; i < FRUITS.length; i++) {
+      			_fruits[i] = FRUITS[i];
     }
 
 	}
@@ -57,9 +64,9 @@ public class Slots {
 	  post: returns String of elements in slots 0 thru 2, separated by tabs
 	  =====================================*/
 	public String toString() {
-    String arrayToString;
+    		String arrayToString;
 		arrayToString = _fruits[0] + "\t" + _fruits[1] + "\t" + _fruits[2];
-    return arrayToString;
+    		return arrayToString;
 	}
 
 
@@ -70,7 +77,7 @@ public class Slots {
 	  =====================================*/
 	private void swap(int i, int j) {
 		String temp = _fruits[i];
-    _fruits[j] = _fruits[i];
+   		 _fruits[j] = _fruits[i];
 		_fruits[i] = temp;
 	}
 
@@ -98,8 +105,8 @@ public class Slots {
 	  =====================================*/
 	public boolean jackpot() {
 		boolean retBoo = false;
-      if (_fruits[0] == _fruits[1] && _fruits[1] == _fruits[2]) {
-        retBoo = true;
+      		if (_fruits[0] == _fruits[1] && _fruits[1] == _fruits[2]) {
+        		retBoo = true;
       }
 		return retBoo;
 	}
@@ -114,10 +121,10 @@ public class Slots {
 	  =====================================*/
 	public boolean miniWin() {
 		boolean retBoo = jackpot();
-      if (_fruits[0] != _fruits[1] && _fruits[0] != _fruits[2] && _fruits[1] != _fruits[2]) {
-        retBoo = true;
+      		if (_fruits[0] != _fruits[1] && _fruits[0] != _fruits[2] && _fruits[1] != _fruits[2]) {
+        		retBoo = true;
       }
-			return retBoo;
+		return retBoo;
 	}
 
 	//main() method for testing
