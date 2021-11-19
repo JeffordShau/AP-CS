@@ -1,5 +1,5 @@
 /*
-SoloJ (Jefford Shau & "Dylan the Duckie")
+JWJ (Jefford Shau, William Vongphanith, Jacob Kirmayer)
 APCS
 HW38 -- Spin Class
 2021-11-17
