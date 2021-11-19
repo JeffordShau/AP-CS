@@ -1,0 +1,24 @@
+/*
+Jefford Shau
+APCS
+HW36 -- All Quacked Up
+2021-11-18
+time spent: 0.6 hr
+*/
+
+- Compile-time error: syntax error
+- Run-time error: program running error (StackOverflowError)
+- Logic errors: program output not what you expect
+- Incremental development!
+- In static method, cannot refer to instance variable without specifying object
+- Debug by bisection: delete half of your code to isolate error
+- NullPointerException: tried to access instance variablemethod with object that is null currrently
+- ArrayIndexOutOfBoundsException: arra index is negative or greater than array.length - 1
+- FileNotFoundException- file not found by java
+- ArithmeticException- something went wrong during arithmetic operation
+- Use int for countable things and floating-point double for measurable things
+- "==" on objects checks if they are identical, equals method checks equivalence
+- For user defined types, equals method checks identity
+- println displays output immediately
+- print output is stored without being displayed until next newline (if no new line, output never stored)
+- If stuck, step awa from screen or confront duckie/a friend for help
