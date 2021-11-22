@@ -11,9 +11,10 @@
  * (If you feel other changes are merited, note what and why, so that we may discuss on the 'morrow.)
  *
  * DISCO:
- *
+ *	0. Able to successfully implement class Protagonist and class Monster
  * QCC:
- *
+ *	0. What does try and catch methods do? 
+ 	1. What does System.in refer to? 
  **********************************************/
 
 import java.io.*;
