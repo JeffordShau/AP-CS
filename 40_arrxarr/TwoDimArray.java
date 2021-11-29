@@ -1,13 +1,16 @@
-/******************************
- * class TwoDimArray
- * (skeleton)
- * practice working with 2D arrays
- ******************************/
+/*
+JWJ (Jefford Shau, Jacob Kirmayer, William Vongphanith)
+APCS
+HW40 -- Demand A Raise
+2021-11-29
+*/
 
-// Clyde "Thluffy" Sinclair
-// APCS pd0
-// HW40 -- 2D arrays
-// 2021-11-30
+/*
+DISCO: 
+  0. 
+QCC: 
+  0. 
+  */
 
 public class TwoDimArray
 {
