@@ -18,7 +18,8 @@ public class TwoDimArray
   //          uses a FOR loop
   public static void print1( int[][] a )
   {
-    // YOUR IMPLEMENTATION HERE
+    for(int rows = 0; rows < a.length(); rows++) {
+      System.out.println(rows); 
   }
 
 
@@ -26,7 +27,9 @@ public class TwoDimArray
   //          uses a FOREACH loop
   public static void print2( int[][] a )
   {
-    // YOUR IMPLEMENTATION HERE
+    for (int[] rows:a) {
+      System.out.println(rows);
+    }
   }
 
 
@@ -75,6 +78,7 @@ public class TwoDimArray
       print2(m1);
       print2(m2);
       print2(m3);
+          /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       System.out.print("testing sum1...\n");
       System.out.println("sum m1 : " + sum1(m1));
       System.out.println("sum m2 : " + sum1(m2));
@@ -83,6 +87,7 @@ public class TwoDimArray
       System.out.println("sum m1 : " + sum2(m1));
       System.out.println("sum m2 : " + sum2(m2));
       System.out.println("sum m3 : " + sum2(m3));
+      
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
     // your own custom test cases welcomed and encouraged
