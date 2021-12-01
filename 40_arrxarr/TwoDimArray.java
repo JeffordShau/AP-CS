@@ -101,6 +101,7 @@ public class TwoDimArray
     return summer;
   }
 
+
   public static void main( String [] args )
   {
       int [][] m1 = new int[4][2];
@@ -120,9 +121,11 @@ public class TwoDimArray
       System.out.println("sum m1 : " + sum2(m1));
       System.out.println("sum m2 : " + sum2(m2));
       System.out.println("sum m3 : " + sum2(m3));
+      /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
     // your own custom test cases welcomed and encouraged
   }
 
 }//end class TwoDimArray
-
