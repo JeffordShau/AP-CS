@@ -3,13 +3,14 @@ JWJ (Jefford Shau, Jacob Kirmayer, William Vongphanith)
 APCS
 HW40 -- Demand A Raise
 2021-11-29
+time spent: 0.5 hr
 */
 
 /*
 DISCO:
   0. Successfully incorporated for and foreach loop to print and sum methods.
 QCC:
-  0. How do you add the commas and the array brackets to the print statement without adding a helper method?
+  0. How would you add the brackets surrounding the 2D int array to the print methods? 
   */
 
 public class TwoDimArray
@@ -18,14 +19,20 @@ public class TwoDimArray
   //          uses a FOR loop
   public static void print1( int[][] a )
   {
-    String totalArray = "";
+    String StringArray = "";
     for(int rows = 0; rows < a.length; rows++) {
+      StringArray += "[";
       for (int idx = 0; idx < a[rows].length; idx++) {
-        System.out.print(a[rows][idx]);
-        System.out.print(" ");
+        StringArray += a[rows][idx] + ", ";
       }
-      System.out.println();
+      StringArray = StringArray.substring(0, StringArray.length() - 2);
+      if (rows == a.length - 1) {
+        StringArray += "]";
+      } else {
+        StringArray += "]\n";
+      }
     }
+    System.out.println(StringArray);
   }
 
 
@@ -34,11 +41,13 @@ public class TwoDimArray
   public static void print2( int[][] a )
   {
     for (int[] subarray: a){
-    	for (int elem : subarray){
-    		System.out.print(elem);
-    		System.out.print(" ");
+      String totalArray = "[";
+    	for (int elements:subarray){
+    		totalArray += elements + ", ";
     	}
-    	System.out.println();
+      totalArray = totalArray.substring(0, totalArray.length() - 2);
+      totalArray += "]";
+    	System.out.println(totalArray);
     }
   }
 
@@ -120,3 +129,4 @@ public class TwoDimArray
   }
 
 }//end class TwoDimArray
+
