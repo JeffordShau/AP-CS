@@ -38,8 +38,8 @@ public class Rational {
         return _p + "/" + _q;
     }
 
-    public float floatValue() {
-        return (float) _p / _q;
+    public double floatValue() {
+        return (double) _p / _q;
     }
 
     public void multiply (Rational rational) {
@@ -48,7 +48,7 @@ public class Rational {
     }
 
     public void divide (Rational rational) {
-      if (_p == 0 || rational._p == 0) {
+      if (rational._p == 0) {
         System.out.println("Error: cannot divide by zero.");
       } else {
         _p = _p * rational._q;
