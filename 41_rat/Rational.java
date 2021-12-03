@@ -1,7 +1,7 @@
 /*
 JWJ (Jefford Shau, William Vongphanith, Jacob Kirmayer)
 APCS
-HW40 -- Be Rational
+HW41 -- Be Rational
 2021-12-01
 time spent: 0.5 hr
 */
@@ -15,8 +15,8 @@ QCC:
 
 public class Rational {
 
-    int _p; // numerator
-    int _q; // denominator
+    private int _p; // numerator
+    private int _q; // denominator
 
     public Rational () {
         _p = 0;
@@ -43,16 +43,16 @@ public class Rational {
     }
 
     public void multiply (Rational rational) {
-        _p = _p * rational._p;
-        _q = _q * rational._q;
+        _p = this._p * rational._p;
+        _q = this._q * rational._q;
     }
 
     public void divide (Rational rational) {
       if (rational._p == 0) {
         System.out.println("Error: cannot divide by zero.");
       } else {
-        _p = _p * rational._q;
-        _q = _q * rational._p;
+        _p = this._p * rational._q;
+        _q = this._q * rational._p;
       }
     }
 
