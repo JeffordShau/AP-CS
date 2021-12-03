@@ -1,24 +1,45 @@
+/*
+JWJ (Jefford Shau, William Vongphanith, Jacob Kirmayer)
+APCS
+HW42 -- Be More Rational
+2021-12-02
+time spent: 0.5 hr
+*/
+
+/*
+DISCO:
+  0. PRODUCES ERROR
+QCC:
+  0. 
+*/
+
 public class Rational {
 
-    int _p;
-    int _q;
+    private int _p; // numerator
+    private int _q; // denominator
 
     public Rational () {
-        _p = 1;
+        _p = 0;
         _q = 1;
     }
 
     public Rational (int p, int q) {
-        _p = p;
-        _q = q;
-    }
-
-    public float floatValue() {
-        return (float) _p / _q;
+        if (q == 0) {
+          System.out.println("Invalid denominator detected. Will proceed to set default values.");
+          _p = 0;
+          _q = 1;
+        } else {
+          _p = p;
+          _q = q;
+        }
     }
 
     public String toString() {
         return _p + "/" + _q;
+    }
+
+    public double floatValue() {
+        return (double) _p / _q;
     }
 
     public void multiply (Rational rational) {
@@ -27,17 +48,21 @@ public class Rational {
     }
 
     public void divide (Rational rational) {
+      if (rational._p == 0) {
+        System.out.println("Error: cannot divide by zero.");
+      } else {
         _p = _p * rational._q;
         _q = _q * rational._p;
+      }
     }
 
-    public int gcd(int a, int b){
+    public static int gcd(int a, int b){
       if (a==b){return a;}
       else if (a>b){return gcd(a-b,b);}
       else {return gcd(b-a,a);}
     }
 
-    public int gcd(){
+    public static int gcd(){
       return gcd(_p,_q);
     }
 
@@ -67,25 +92,3 @@ public class Rational {
         return -1;
       }
     }
-
-    public static void main(String[] args) {
-        Rational rat = new Rational(3, 5);
-        Rational rate = new Rational(7, 4);
-        Rational ratio = new Rational(10, 13);
-
-        System.out.println(rat.floatValue());
-        System.out.println(rat.toString());
-        rat.multiply(rate);
-        System.out.println(rat.toString());
-        rat.divide(rate);
-        System.out.println(rat.toString());
-        System.out.println(rat.gcd());
-        rat.reduce();
-        System.out.println(rat.toString());
-        rat.add(rate);
-        System.out.println(rat.toString());
-        rat.subtract(rate);
-        System.out.println(rat.toString());
-    }
-
-}
