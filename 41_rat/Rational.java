@@ -38,7 +38,7 @@ public class Rational {
         return _p + "/" + _q;
     }
 
-    public double floatValue() {
+    public double floatValue() { // double is most precise with 64 bits
         return (double) _p / _q;
     }
 
