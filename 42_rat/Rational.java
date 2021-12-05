@@ -57,7 +57,7 @@ public class Rational {
     }
 
     public int gcd () {
-      return gcd (this._p, this._q);
+      return gcd (this._p, this._q); // Allows static gcd method to access instance variables
     }
 
     public static int gcd (int a, int b) {
@@ -77,13 +77,17 @@ public class Rational {
     }
 
     public void add(Rational rational) {
-      _q = this._q * rational._q;
+      int tempDenom = 0;
+      tempDenom = this._q * rational._q;
       _p = this._p * rational._q + this._q * rational._p;
+      _q = tempDenom;
     }
 
     public void subtract(Rational rational) {
-      _q = this._q * rational._q;
-      _p = this._p * rational._q - this._q * rational._p;
+      int tempDenom = 0;
+      tempDenom = this._q * rational._q;
+      _p = (this._p * rational._q) - (this._q * rational._p);
+      _q = tempDenom;
     }
     public int compareTo(Rational rational) {
       double floatVal = floatValue();
@@ -98,24 +102,28 @@ public class Rational {
     }
 
     public static void main(String[] args) {
-        Rational rat = new Rational(3, 5);
-        Rational rate = new Rational(7, 4);
+        Rational rat = new Rational(1, 2);
+        Rational rate = new Rational(3, 5);
         Rational ratio = new Rational(10, 13);
+        Rational improper = new Rational (2, 1);
+        Rational racket = new Rational(1, 2);
+        Rational sub1 = new Rational(4, 5);
+        Rational sub2 = new Rational(2, 3);
 
-        System.out.println(rat.floatValue());
-        System.out.println(rat.toString());
+        System.out.println(rat.floatValue() + " Should be 0.5");
+        System.out.println(rat.toString() + " Should be 1/2");
         rat.multiply(rate);
-        System.out.println(rat.toString());
-        rat.divide(rate);
-        System.out.println(rat.toString());
-        System.out.println(rat.gcd());
-        rat.reduce();
-        System.out.println(rat.toString());
-        rat.add(rate);
-        System.out.println(rat.toString());
-        rat.subtract(rate);
-        System.out.println(rat.toString());
-        System.out.println(rat.compareTo(rate));
+        System.out.println(rat.toString() + " Should be 3/10");
+        ratio.divide(improper);
+        System.out.println(ratio.toString() + " Should be 10/26");
+        System.out.println(ratio.gcd() + " Should be 2");
+        ratio.reduce();
+        System.out.println(ratio.toString() + " Should be 5/13");
+        rate.add(improper);
+        System.out.println(rate.toString() + " Should be 13/5");
+        sub1.subtract(sub2);
+        System.out.println(sub1.toString() + " Should be 2/15");
+        System.out.println(rate.compareTo(improper) + " Should be 1");
     }
 
 }
