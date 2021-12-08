@@ -1,7 +1,7 @@
 /*
 JWJ (Jefford Shau, William Vongphanith, Jacob Kirmayer)
 APCS
-HW34 -- Array of Steel
+HW43 -- Array of Steel
 2021-12-06
 */
 
