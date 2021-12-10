@@ -129,6 +129,7 @@ public class SuperArray implements ListInt
   //main method for testing
   public static void main( String[] args )
   {
+    /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
       SuperArray curtis = new SuperArray();
       System.out.println( "Printing empty SuperArray curtis..." );
       System.out.println( curtis );
@@ -144,7 +145,8 @@ public class SuperArray implements ListInt
       System.out.println("new length of underlying array: "
       + curtis._data.length );
       }
-      SuperArray mayfield = new SuperArray();
+      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~*/
+      ListInt mayfield = new SuperArray();
       System.out.println("Printing empty SuperArray mayfield...");
       System.out.println(mayfield);
       mayfield.add(5);
@@ -169,8 +171,6 @@ public class SuperArray implements ListInt
       mayfield.add(1,77);
       System.out.println("Printing SuperArray mayfield post-insert...");
       System.out.println(mayfield);
-      /*~~~~~~~~move~me~down~~~~~~~~~~~~~~V~~~~~~~~
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~~~~*/
   }//end main()
 
 
