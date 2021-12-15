@@ -1,6 +1,6 @@
 // JWJ (Jefford Shau, Wililam Vongphanith, Jacob Kirmayer)
 // APCS
-// HW47 -- ?
+// HW47 -- Guess A Num
 // 2021-12-14
 // time spent: 0.5_ hrs
 
@@ -25,6 +25,7 @@
     QCC:
 	0.What if the number inputted is out of the guess range? 
  ***/
+
 import java.util.Scanner;
 
 public class GuessNumber
@@ -63,6 +64,7 @@ public class GuessNumber
     System.out.print("Guess a num bt " + _lo + " & " + _hi + ": ");
     int guess = sc.nextInt();
     _guessCtr++;
+	  
     if (guess < _target) {
       System.out.println("Too low");
       _lo = guess + 1;
