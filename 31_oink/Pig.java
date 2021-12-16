@@ -7,11 +7,11 @@
 /*
 DISCOVERIES
     0. We were efficient by calling the other methods. We did not have to repeat unneccesary code twice.
-    1. We incorporated the built-in Java method indexOf() in our hasA method. 
+    1. We incorporated the built-in Java method indexOf() in our hasA method.
 
 UNRESOLVED QUESTIONS
     0. Where is the translator method?
-    1. How will this code help us with our pig latin translator? 
+    1. How will this code help us with our pig latin translator?
 */
 
 /***
@@ -44,7 +44,7 @@ public class Pig
     post: hasA("cat", "a") -> true
     hasA("cat", "p")       -> false
     =====================================*/
-  public static boolean hasA( String w, String letter ) 
+  public static boolean hasA( String w, String letter )
   {
     return w.indexOf(letter) >= 0;
   }
@@ -54,7 +54,7 @@ public class Pig
     boolean isAVowel(String) -- tells whether a letter is a vowel
     precondition: letter.length() == 1
     =====================================*/
-  public static boolean isAVowel( String letter ) 
+  public static boolean isAVowel( String letter )
   {
       for (int i = 0; i < VOWELS.length(); i++) {
           if (VOWELS.substring(i, i + 1).equals(letter)) {
@@ -71,7 +71,7 @@ public class Pig
     pre:  w != null
     post: countVowels("meatball") -> 3
     =====================================*/
-  public static int countVowels( String w ) 
+  public static int countVowels( String w )
   {
       int count = 0;
       for (int i = 0; i < w.length(); i++) {
@@ -90,7 +90,7 @@ public class Pig
     post: hasAVowel("cat") -> true
     hasAVowel("zzz")       -> false
     =====================================*/
-  public static boolean hasAVowel( String w ) 
+  public static boolean hasAVowel( String w )
   {
       if (countVowels(w) > 0) {
           return true;
@@ -105,7 +105,7 @@ public class Pig
     pre:  w != null
     post: allVowels("meatball") -> "eaa"
     =====================================*/
-  public static String allVowels( String w ) 
+  public static String allVowels( String w )
   {
       String vowels = "";
 
@@ -118,7 +118,7 @@ public class Pig
       return vowels;
   }
 
-  public static void main( String[] args ) 
+  public static void main( String[] args )
   {
       System.out.println("hasA(\"lol\", \"l\") -> " +  hasA("lol", "l"));
       System.out.println("hasA(\"lol\", \"r\") -> " +  hasA("lol", "r"));
