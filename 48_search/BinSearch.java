@@ -30,7 +30,18 @@ public class BinSearch
 
     int m = (lo + hi) / 2; //init mid pos var
 
+    if (a[m] == target) {
+      tPos = m;
+    }
 
+    if (a[m] < target) {
+      lo = m + 1;
+      binSearchRec(a, target, lo, hi);
+    }
+    else if (a[m] > target) {
+      hi = m - 1;
+      binSearchRec(a, target, lo, hi);
+    }
 
     return tPos;
   }//end binSearchRec
@@ -95,8 +106,7 @@ public class BinSearch
   public static void main ( String[] args )
   {
 
-    /*----------------------------------------------------
-    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
     System.out.println("\nNow testing binSearch on Comparable array...");
     //Declare and initialize array of Comparables
     Comparable[] iArr = { 2, 4, 6, 8, 6, 42 };
@@ -126,6 +136,7 @@ public class BinSearch
     System.out.println( binSearch(iArr3,5) );
     //search for 43 in array
     System.out.println( binSearch(iArr3,43) );
+    /*----------------------------------------------------
     ====================================================*/
 
 
