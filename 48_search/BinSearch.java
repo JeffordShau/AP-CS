@@ -33,15 +33,15 @@ public class BinSearch
 
     int m = (lo + hi) / 2; //init mid pos var
 
-    if (a[m] == target) {
+    if (a[m].compareTo(target) == 0) {
       tPos = m;
     }
 
-    if (a[m] < target) {
+    if (a[m].compareTo(target) < 0) {
       lo = m + 1;
       binSearchRec(a, target, lo, hi);
     }
-    else if (a[m] > target) {
+    else if (a[m].compareTo(target) > 0) {
       hi = m - 1;
       binSearchRec(a, target, lo, hi);
     }
