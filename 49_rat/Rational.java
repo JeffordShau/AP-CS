@@ -8,7 +8,8 @@ time spent: 0.5 hr
 
 /*
 DISCO:
-  0. Should not compare float values because of the precision in float, while Rational does not have precision.
+  0. Implemented an equals method to compare different objects.
+  1. Should not compare float values because of the precision in float, while Rational does not have precision.
 QCC:
   0.
 */
@@ -92,16 +93,19 @@ public class Rational {
       }
     }
 
-
     public void subtract(Rational rational) {
       int tempDenom = 0;
       tempDenom = this._q * rational._q;
       _p = (this._p * rational._q) - (this._q * rational._p);
       _q = tempDenom;
     }
+
     public int compareTo(Object rational) {
       double floatVal = floatValue();
       double ratVal = ((Rational) rational).floatValue();
+      if ((floatVal < 0 && ratVal > 0) || (floatVal > 0 && ratVal < 0)) {
+        
+      }
       if (floatVal > ratVal) {
         return 1;
       } else if (floatVal == ratVal) {
