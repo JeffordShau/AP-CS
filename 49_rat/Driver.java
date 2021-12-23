@@ -1,15 +1,20 @@
 /*
-JWJ (Jefford Shau, Willaim Vongphanith, Jacob Kirmayer)
+JWJ (Jefford Shau, William Vongphanith, Jacob Kirmayer)
 APCS
 HW49 -- Rational Standards Compliance
 2021-12-22
+time spent: 0.5 hr
 */
 
 /*
 DISCO:
-  0.
+  0. Implemented an equals method to compare different objects.
+  1. We realized to not compare the rationals using float values because of the inaccurate precision in the datatypes float and double.
+  2. Rational and Integer as arguments result in incompatible types error and not ClassCastException error.
+  3. The "throw new error" must be the last line of the method or else "unreachable statement" error.
+  4. compareTo method does not work for rational with numerator and denominator both negatives.
 QCC:
-  0.
+  0. How can you implement a compareTo that works for rationals with the numerator and denominator with both negatives?
 */
 
 
