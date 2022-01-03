@@ -99,6 +99,10 @@ public class Rational implements Comparable {
       _p = (this._p * rational._q) - (this._q * rational._p);
       _q = tempDenom;
     }
+
+
+
+
     public int compareTo(Object rational) {
       double floatVal = floatValue();
       double ratVal = ((Rational) rational).floatValue();
