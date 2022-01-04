@@ -8,9 +8,13 @@ time spent: 0.5 hr
 
 /*
 DISCO:
-  0. Should not compare float values because of the precision in float, while Rational does not have precision.
+  0. Implemented an equals method to compare different objects.
+  1. We realized to not compare the rationals using float values because of the inaccurate precision in the datatypes float and double.
+  2. Rational and Integer as arguments result in incompatible types error and not ClassCastException error.
+  3. The "throw new error" must be the last line of the method or else "unreachable statement" error.
+  4. compareTo method does not work for rational with numerator and denominator both negatives.
 QCC:
-  0.
+  0. How can you implement a compareTo that works for rationals with the numerator and denominator with both negatives?
 */
 
 public class Rational implements Comparable {
@@ -92,13 +96,13 @@ public class Rational implements Comparable {
       }
     }
 
-
     public void subtract(Rational rational) {
       int tempDenom = 0;
       tempDenom = this._q * rational._q;
       _p = (this._p * rational._q) - (this._q * rational._p);
       _q = tempDenom;
     }
+<<<<<<< HEAD:49_Rational/Rational.java
 
 
 
@@ -114,32 +118,15 @@ public class Rational implements Comparable {
         return -1;
       }
     }
+=======
+>>>>>>> 34e5869bb917f2087d51aa899e6dc8ca8a08469e:49_rat/Rational.java
 
-    public static void main(String[] args) {
-        Rational rat = new Rational(1, 2);
-        Rational rate = new Rational(3, 5);
-        Rational ratio = new Rational(10, 13);
-        Rational improper = new Rational (2, 1);
-        Rational racket = new Rational(1, 2);
-        Rational sub1 = new Rational(4, 5);
-        Rational sub2 = new Rational(2, 3);
-        Integer rations = new Integer(5);
-
-        System.out.println(rat.floatValue() + " Should be 0.5");
-        System.out.println(rat.toString() + " Should be 1/2");
-        rat.multiply(rate);
-        System.out.println(rat.toString() + " Should be 3/10");
-        ratio.divide(improper);
-        System.out.println(ratio.toString() + " Should be 10/26");
-        System.out.println(ratio.gcd() + " Should be 2");
-        ratio.reduce();
-        System.out.println(ratio.toString() + " Should be 5/13");
-        rate.add(improper);
-        System.out.println(rate.toString() + " Should be 13/5");
-        sub1.subtract(sub2);
-        System.out.println(sub1.toString() + " Should be 2/15");
-        System.out.println(rate.equals(rations) + " Should be false");
-        System.out.println(rate.equals(rat) + " Should be false");
+    public int compareTo(Object obj) {
+      if (obj instanceof Rational) {
+        Rational rational = (Rational) obj;
+        return this._p * rational._q - this._q * rational._p;
+      }
+      throw new ClassCastException("\ncompareTo() input not a Rational");
     }
 
 }
