@@ -11,6 +11,7 @@
  *  0. Passes through each array from right to left. Compares every element and the element left of it and swaps if less. Continues sorting until array list is sorted.
  * DISCO
  *  0. Implemented a counter for for-loop.
+ *  1. Added a case for if the array size is less than or equal to 1 (cannot compare two elements). 
  * QCC
  * q0: If a pass requires no swaps, what do you know?
  * a0: The entire array is sorted.
