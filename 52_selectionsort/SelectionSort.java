@@ -1,8 +1,8 @@
-//
+// JW? (Jefford Shau, William Vongphanith)
 // APCS pd0
 // HW52 -- implementing selection sort
 // 2022-01-05w
-// time spent:  hrs
+// time spent: 0.5 hrs
 
 /******************************
  *   class SelectionSort -- implements SelectionSort algorithm
