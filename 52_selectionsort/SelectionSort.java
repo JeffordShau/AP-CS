@@ -8,14 +8,15 @@
  *   class SelectionSort -- implements SelectionSort algorithm
  *
  * ALGO:
- *
- * DISCO
- *
- * QCC
+ *  Search through the array linearly for the greatest value and note its index. Swap the greatest value in its index with the value in the greatest index of the unsorted array. Continue this process until (total elements - 1) passes has occurred. The array should be sorted.
+ * DISCO: 
+ *  0. The code for moving the minVal and maxVal is very similar.
+ * QCC:
+ *  0. Does bubble sort and selection sort require the same number of passes?
  * q0: How many passes to sort n elements?
  * a0: At most, n - 1 passes are needed to sort n elements.
  * q1: What do you know after pass p?
- * a1: After pass p, the first p elements are sorted.
+ * a1: After pass p, the first or last p elements are sorted.
  * q2: How do you know if sorted?
  * a2: We know the list is sorted after n - 1 passes.
  * q3: What does a pass boil down to?
@@ -65,21 +66,23 @@ public class SelectionSort
     //note: this version places greatest value at "rightmost" end
 
     //maxPos will point to position of SELECTION (greatest value)
-    int maxPos;
 
-    for( int pass = data.size(); pass > 0; pass-- ) {
-      System.out.println( "\nbegin pass " + (data.size()-pass) );//diag
-
-
-      for( int i = 0; i < data.size() - 1; i++ ) {
-        System.out.println( "maxPos: " + maxPos );//diag
-        System.out.println( data );//diag
-
-
+    for( int pass = data.size() - 1; pass > 0 ; pass-- ) {
+      System.out.println( "\nbegin pass " + (data.size() - pass) ); //pass counter
+      int maxPos = pass;
+      for( int i = 0; i < pass; i++ ) {
+        if (data.get(i).compareTo(data.get(maxPos)) > 0) {
+          maxPos = i;
+        }
       }
+      System.out.println( "maxPos: " + maxPos );
+      Comparable temp = data.get(pass);
+      data.set(pass, data.get(maxPos));
+      data.set(maxPos, temp);
+      System.out.println( data );
 
 
-      System.out.println( "after swap: " +  data );//diag
+      System.out.println( "after swap: " +  data );
     }
   }//end selectionSort
 
@@ -106,7 +109,6 @@ public class SelectionSort
   public static void main( String [] args )
   {
 
-    /*===============for VOID methods=============
     ArrayList glen = new ArrayList<Integer>();
     glen.add(7);
     glen.add(1);
@@ -121,29 +123,31 @@ public class SelectionSort
     System.out.println( "ArrayList coco before sorting:\n" + coco );
     selectionSortV(coco);
     System.out.println( "ArrayList coco after sorting:\n" + coco );
+    /*===============for VOID methods=============
+
       ============================================*/
 
-    /*==========for AL-returning methods==========
-      ArrayList glen = new ArrayList<Integer>();
-      glen.add(7);
-      glen.add(1);
-      glen.add(5);
-      glen.add(12);
-      glen.add(3);
-      System.out.println( "ArrayList glen before sorting:\n" + glen );
-      ArrayList glenSorted = selectionSort( glen );
-      System.out.println( "sorted version of ArrayList glen:\n"
-      + glenSorted );
-      System.out.println( "ArrayList glen after sorting:\n" + glen );
+    ArrayList glem = new ArrayList<Integer>();
+    glem.add(7);
+    glem.add(1);
+    glem.add(5);
+    glem.add(12);
+    glem.add(3);
+    System.out.println( "ArrayList glen before sorting:\n" + glem );
+    selectionSortV(glem);
+    System.out.println( "ArrayList glen after sorting:\n" + glem );
+    ArrayList coconut = populate( 10, 1, 1000 );
+    System.out.println( "ArrayList coconut before sorting:\n" + coconut );
+    selectionSortV(coconut);
+    System.out.println( "ArrayList coconut after sorting:\n" + coconut );
 
-      ArrayList coco = populate( 10, 1, 1000 );
-      System.out.println( "ArrayList coco before sorting:\n" + coco );
-      ArrayList cocoSorted = selectionSort( coco );
-      System.out.println( "sorted version of ArrayList coco:\n"
+    ArrayList cocobread = populate( 10, 1, 1000 );
+    System.out.println( "ArrayList cocobread before sorting:\n" + cocobread );
+    ArrayList cocoSorted = selectionSort( cocobread );
+    System.out.println( "sorted version of ArrayList coco:\n"
       + cocoSorted );
-      System.out.println( "ArrayList coco after sorting:\n" + coco );
-      System.out.println( coco );
-      ============================================*/
+    System.out.println( "ArrayList cocobread before sorting:\n" + cocobread );
+
 
   }//end main
 
