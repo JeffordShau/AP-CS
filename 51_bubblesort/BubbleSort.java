@@ -10,8 +10,7 @@
  * ALGO:
  *  0. Passes through each array from right to left. Compares every element and the element left of it and swaps if less. Continues sorting until array list is sorted.
  * DISCO
- *  0. Implemented a counter for for-loop.
- *  1. Added a case for if the array size is less than or equal to 1 (cannot compare two elements). 
+ *  0. Implemented a counter (passes) for for-loop.
  * QCC
  * q0: If a pass requires no swaps, what do you know?
  * a0: The entire array is sorted.
@@ -69,21 +68,16 @@ public class BubbleSort
     // postcondition: data's elements sorted in ascending order
     public static void bubbleSortV( ArrayList<Comparable> data )
     {
-        if (data.size() <= 1) {
-            return;
+      for (int i = 0; i < data.size() - 1; i++) {
+        for (int j = data.size() - 1; j > i; j--) {
+          if (data.get(j).compareTo(data.get(j-1)) < 0) {
+            Comparable temp = data.get(j);
+            data.set(j, data.get(j-1));
+            data.set(j-1, temp);
+          }
         }
-        else {
-            for (int i = 0; i < data.size() - 1; i++) {
-                for (int j = data.size() - 1; j > i; j--) {
-                    if (data.get(j).compareTo(data.get(j-1)) < 0) {
-                        Comparable temp = data.get(j);
-                        data.set(j, data.get(j-1));
-                        data.set(j-1, temp);
-                    }
-                }
-            }
-            return;
-        }
+      }
+      return;
     }
 
 
@@ -93,21 +87,16 @@ public class BubbleSort
 
     public static ArrayList<Comparable> bubbleSort( ArrayList<Comparable> data )
     {
-        if (data.size() <= 1) {
-            return data;
+      for (int i = 0; i < data.size() - 1; i++) {
+        for (int j = data.size() - 1; j > i; j--) {
+          if (data.get(j).compareTo(data.get(j-1)) < 0) {
+            Comparable temp = data.get(j);
+            data.set(j, data.get(j-1));
+            data.set(j-1, temp);
+          }
         }
-        else {
-            for (int i = 0; i < data.size() - 1; i++) {
-                for (int j = data.size() - 1; j > i; j--) {
-                    if (data.get(j).compareTo(data.get(j-1)) < 0) {
-                        Comparable temp = data.get(j);
-                        data.set(j, data.get(j-1));
-                        data.set(j-1, temp);
-                    }
-                }
-            }
-            return data;
-        }
+      }
+      return data;
     }
 
     public static void main( String [] args )
