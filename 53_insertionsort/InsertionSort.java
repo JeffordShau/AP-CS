@@ -61,7 +61,7 @@ public class InsertionSort
   // postcondition: data's elements sorted in ascending order
   public static void insertionSortV( ArrayList<Comparable> data )
   {
-    for(  ) {
+    for( int partition = 0; partition < data.size() - 1 ) {
       //partition marks first item in unsorted region
 
       System.out.println( "\npartition: " + partition + "\tdataset:"); //diag
