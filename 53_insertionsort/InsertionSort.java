@@ -10,18 +10,18 @@
  * ALGO:
  *  Partition the list into sorted and unsorted regions. Move next element from the unsorted region to its position in the sorted region by swapping adjacent values. Increase the size of the sorted partition by 1. Repeat until sorted.
  * DISCO
- *
+ *  0. The concept of this sorting algorithm was easier than the selectionSort algorithm. 
  * QCC
  * q0: How many passes to sort n elements?
  * a0: n - 1 passes are necessary to sort n elements.
  * q1: What do you know after pass p?
- * a1: After pass p, p +_1 elements are sorted.
+ * a1: After pass p, the first p +_1 elements are sorted.
  * q2: How will you know when sorted?
  * a2: We will know the list is sorted after n - 1 passes.
  * q3: What constitues a pass?
  * a3: A pass is when an element in the unsorted region is placed in ascending order in the sorted region.
  * q4: What must you track?
- * a4: We must track the number of partitions (passes). We must also track the number of sorted and unsorted numbers in each of the partitions.
+ * a4: We must track the number of passes and the element that was swapped for each pass.
  ******************************/
 
 
@@ -61,21 +61,24 @@ public class InsertionSort
   // postcondition: data's elements sorted in ascending order
   public static void insertionSortV( ArrayList<Comparable> data )
   {
-    for( int partition = 0; partition < data.size() - 1 ) {
+    for( int partition = 1; partition < data.size(); partition++ ) {
       //partition marks first item in unsorted region
 
       System.out.println( "\npartition: " + partition + "\tdataset:"); //diag
       System.out.println( data );
 
       //traverse sorted region from right to left
-      for(  ) {
+      for( int i = partition; i > 0; i-- ) {
 
         // "walk" the current item to where it belongs
         // by swapping adjacent items
-        if (  ) {
+        if ( (data.get(i)).compareTo(data.get(i - 1)) < 0 ) {
 
           System.out.println( "swap indices "+(i-1)+" & "+i+"..." ); //diag
-
+          Comparable temp = data.get(i);
+          data.set( i, data.get(i - 1));
+          data.set( i - 1, temp);
+          System.out.println( "after swap" + data);
         }
         else
           break;
@@ -107,7 +110,6 @@ public class InsertionSort
 
   public static void main( String [] args )
   {
-    /*===============for VOID methods=============
       System.out.println("\n*** Testing sort-in-place (void) version... *** ");
       ArrayList glen = new ArrayList<Integer>();
       glen.add(7);
@@ -123,29 +125,29 @@ public class InsertionSort
       System.out.println( "\nArrayList coco before sorting:\n" + coco );
       insertionSortV(coco);
       System.out.println( "\nArrayList coco after sorting:\n" + coco );
-      ============================================*/
 
-    /*==========for AL-returning methods==========
+
       System.out.println( "*** Testing non-void version... *** " );
-      ArrayList glen = new ArrayList<Integer>();
-      glen.add(7);
-      glen.add(1);
-      glen.add(5);
-      glen.add(12);
-      glen.add(3);
-      System.out.println( "\nArrayList glen before sorting:\n" + glen );
-      ArrayList glenSorted = insertionSort( glen );
+      ArrayList glem = new ArrayList<Integer>();
+      glem.add(7);
+      glem.add(1);
+      glem.add(5);
+      glem.add(12);
+      glem.add(3);
+      System.out.println( "\nArrayList glen before sorting:\n" + glem );
+      ArrayList glenSorted = insertionSort( glem );
       System.out.println( "\nsorted version of ArrayList glen:\n"
       + glenSorted );
-      System.out.println( "\nArrayList glen after sorting:\n" + glen );
+      System.out.println( "\nArrayList glen after sorting:\n" + glem );
 
-      ArrayList coco = populate( 10, 1, 1000 );
-      System.out.println( "\nArrayList coco before sorting:\n" + coco );
-      ArrayList cocoSorted = insertionSort( coco );
+      ArrayList coconut = populate( 10, 1, 1000 );
+      System.out.println( "\nArrayList coco before sorting:\n" + coconut );
+      ArrayList coconutSorted = insertionSort( coconut );
       System.out.println( "\nsorted version of ArrayList coco:\n"
-      + cocoSorted );
-      System.out.println( "\nArrayList coco after sorting:\n" + coco );
-      System.out.println( coco );
+      + coconutSorted );
+      System.out.println( "\nArrayList coco after sorting:\n" + coconut );
+      /*==========for AL-returning methods==========
+
       ============================================*/
 
   }//end main
