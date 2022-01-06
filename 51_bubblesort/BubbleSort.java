@@ -80,24 +80,26 @@ public class BubbleSort
       return;
     }
 
-
-    // ArrayList-returning bubbleSort
+    // ArrayList-returning bubblesort
     // postcondition: order of input ArrayList's elements unchanged
     //                Returns sorted copy of input ArrayList.
-
     public static ArrayList<Comparable> bubbleSort( ArrayList<Comparable> data )
     {
-      for (int i = 0; i < data.size() - 1; i++) {
-        for (int j = data.size() - 1; j > i; j--) {
-          if (data.get(j).compareTo(data.get(j-1)) < 0) {
-            Comparable temp = data.get(j);
-            data.set(j, data.get(j-1));
-            data.set(j-1, temp);
-          }
-        }
-      }
-      return data;
-    }
+      //declare and initialize empty ArrayList for copying
+      ArrayList<Comparable> newt = new ArrayList<Comparable>();
+
+      //copy input ArrayList into working ArrayList
+      for( Comparable o : data )
+        newt.add( o );
+
+      //sort working ArrayList
+      bubbleSortV( newt );
+
+      //return working ArrayList
+      return newt;
+    }//end bubbleSort
+
+
 
     public static void main( String [] args )
     {
