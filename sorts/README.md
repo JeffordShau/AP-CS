@@ -12,4 +12,5 @@ Worst case:
 
 
 Insertion Sort
-Best case: The list is already sorted. 
+Best case: The list is already sorted.
+Worst case:
