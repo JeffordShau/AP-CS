@@ -1,3 +1,11 @@
+/*
+JW (Jefford Shau, William Vongphanith)
+APCS
+HW56 -- Turing Training Wheels
+2022-01-12
+time spent: 0.5 hr
+*/
+
 /**
  * A program to carry on conversations with a human user.
  * This version:
@@ -30,6 +38,7 @@ public class Magpie3
 	public String getResponse(String statement)
 	{
 		String response = "";
+		response = response.trim();
 		if (statement.length() == 0)
 		{
 			response = "Say something, please.";
@@ -44,6 +53,29 @@ public class Magpie3
 				|| findKeyword(statement, "brother") >= 0)
 		{
 			response = "Tell me more about your family.";
+		}
+		else if (findKeyword(statement, "dog") >= 0
+				|| (findKeyword(statement, "cat")) >= 0)
+		{
+			response = "Tell me more about your pets.";
+		}
+		else if (findKeyword(statement, "Mr. Mykolyk") >= 0)
+		{
+			response = "He sounds like a good teacher.";
+		}
+		else if (findKeyword(statement, "why") >= 0
+				|| (findKeyword(statement, "Why")) >= 0)
+		{
+			response = "I don't know.";
+		}
+		else if (findKeyword(statement, "school") >= 0
+				|| (findKeyword(statement, "Stuyvesant")) >= 0)
+		{
+			response = "Tell me more about your school.";
+		}
+		else if (findKeyword(statement, "homework") >= 0)
+		{
+			response = "How much homework do you have left?";
 		}
 		else
 		{
@@ -133,7 +165,7 @@ public class Magpie3
 	private int findKeyword(String statement, String goal)
 	{
 		return findKeyword(statement, goal, 0);
-	}t
+	}
 
 	/**
 	 * Pick a default response to use if nothing else fits.
@@ -142,7 +174,7 @@ public class Magpie3
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -162,6 +194,14 @@ public class Magpie3
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
+		}
+		else if (whichResponse == 4)
+		{
+			response = "Can you say that again?";
+		}
+		else if (whichResponse == 5)
+		{
+			response = "That's soooo boring.";
 		}
 
 		return response;
