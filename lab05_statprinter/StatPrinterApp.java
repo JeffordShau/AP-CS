@@ -59,8 +59,9 @@ public class StatPrinterApp
     System.out.println( "al2 max: " + sp1.max(al2) );
     System.out.println( "local modes: " );
     // result is correct
-    for (int i = 0; i < al2.size(); i++) {
-      System.out.println( al2.get(i) + " is local mode?\t" + sp2.isLocalMode(i) );
+    for (int i = 0; i < sp2.max(al2)+1; i++) {
+      System.out.println( sp2.getFrequencies().get(i) + " is local mode?\t" + sp2.isLocalMode(i)
+     );
     }
     System.out.println( "histogram:" );
     sp2.printHistogram( 50 );

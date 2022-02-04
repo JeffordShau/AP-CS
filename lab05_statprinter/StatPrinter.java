@@ -120,6 +120,9 @@ public class StatPrinter
 
   }
 
+  public ArrayList<Integer> getFrequencies() {
+    return _frequency;
+  }
 
   //*************** QUESTION 05 **************************
   //precond:  longestBar > 0
