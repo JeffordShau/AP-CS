@@ -2,4 +2,27 @@ Jefford Shau
 APCS
 HW63 -- Read/Review/Expand
 2022-02-10
-time spent: 0.5 hr
+time spent: 0.5 hr + class time
+
+Activity 1
+1. a. public static double sentimentVal
+   b. Yes, it requires a string. If you pass a different type of parameter you will get an incompatible types error.
+   c. This method returns an int.
+2. sentimentVal("")                       0.0
+   sentimentVal("dairy")                  0.0
+   sentimentVal("ability")               -0.03
+   sentimentVal("academic")               0.43
+   sentimentVal("amount")                 0.2
+3. a. Will compile because this statement will call sentimentVal with a string parameter and the variable type is a double. This matches the signature of sentimentVal.
+   b. Will not compile because the parameter of sentimentVal is a String, not a double. This will result in an incompatible types error.
+   c. Will not compile because there is only one parameter in sentimentVal. Calling sentimentVal with two parameters will not work because this does not match the signature of sentimentVal
+
+Actiivty 2
+4. The totalSentiment method works by first calling the textToString method to convert the contents of the file into totalString. Next, iterate through totalString and split the String where there is a space (""). Take the word that was split from the totalString and use it as an argument for the sentimentVal method. The totalSentVal of each word is added up and returned as a double.
+5. a. The ratings make sense because the ratings depend on the totalSentVal of the review. If the totalSentVal of the review is low, then the rating will also be low.
+   b. 1. ???
+      2. ???
+6. a. The logical error the student made in this code is that an integer less than 0 is also less than 5, which is also less than 10, which is also less than 15. So essentially the star ratings of 1, 2, and 3 will not be returned. A totalSentiment value of 0 would return a star rating of 4 here.
+   b. To fix it, you have to switch the less than sign to the greater than sign.
+
+Activity 3

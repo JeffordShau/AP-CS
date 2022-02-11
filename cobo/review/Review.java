@@ -100,10 +100,29 @@ public class Review {
 
   public static double totalSentiment(String fileName) {
     String totalString = textToString(fileName);
-    int firstSpace = 0;
-    int nextSpace = 0;
-    for (int i = 0; i < totalString.length; i++ ) {
-      if totalString[]
+    double totalSentVal = 0;
+    for (String word: totalString.split(" ")) {
+      totalSentVal += sentimentVal(word);
+    }
+    return totalSentVal;
+  }
+
+  public static int starRating(String fileName) {
+    double totalSent = totalSentiment(fileName);
+    if (totalSent > 30) {
+      return 5;
+    }
+    else if (totalSent > 25) {
+      return 4;
+    }
+    else if (totalSent > 20) {
+      return 3;
+    }
+    else if (totalSent > 10) {
+      return 2;
+    }
+    else {
+      return 1;
     }
   }
 
@@ -173,10 +192,17 @@ public class Review {
   }
 
   public static void main(String[] args) {
+    // Activity 1
     System.out.println(sentimentVal("")); // 0.0
     System.out.println(sentimentVal("dairy")); // 0.0
     System.out.println(sentimentVal("ability")); // -0.03
     System.out.println(sentimentVal("academic")); // 0.43
     System.out.println(sentimentVal("amount")); // 0.2
+
+    // Activity 2
+    System.out.println(totalSentiment("NYTimesReview.txt"));
+    System.out.println(starRating("NYTimesReview.txt"));
+    System.out.println(totalSentiment("SimpleReview.txt"));
+    System.out.println(starRating("SimpleReview.txt"));
   }
 }
