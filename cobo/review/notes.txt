@@ -2,7 +2,7 @@ Jefford Shau
 APCS
 HW63 -- Read/Review/Expand
 2022-02-10
-time spent: 0.5 hr + class time
+time spent: 0.8 hr + class time
 
 Activity 1
 1. a. public static double sentimentVal
