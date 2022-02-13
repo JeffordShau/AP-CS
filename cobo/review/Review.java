@@ -73,11 +73,27 @@ public class Review {
     // System.out.println(pos);
     // System.out.println(neg);
 
+    // Activity 4
+    System.out.println("Positive review:");
     System.out.println(fakeReview("SimpleReview.txt", "positive"));
+    System.out.println("Negative review:");
+    System.out.println(fakeReview("SimpleReview.txt", "negative"));
+    // Activity 5
+    System.out.println("No duplicates:");
+    System.out.println(removeDups("the restuarant was very good!"));
 
+    System.out.println("One duplicate:");
+    System.out.println(removeDups("the their him restaurant restaurant"));
 
+    System.out.println("Multiple duplicates:");
+    System.out.println(removeDups("terrible terrible restaurant restaurant"));
+
+    System.out.println("Uppercase and lowercase:");
+    System.out.println(removeDups("The restaurant was the best."));
+
+    System.out.println("Punctuation:");
+    System.out.println(removeDups("The restaurant was the best. Very good restaurant."));
   }
-
 
   public static double totalSentiment(String fileName) {
     double sentiment = 0;
@@ -107,56 +123,40 @@ public class Review {
   }
 
   public static String fakeReview(String fileName, String posneg) {
-  //   String file = textToString(fileName);
-  //   String out = "";
-  //   for (String s : splice(file, SPACE)) {
-  //     if(s.indexOf("*") != -1) {
-  //       int choice = (int) (Math.random()*sentiment.size());
-  //       int counter = 0;
-  //       for (String key : sentiment.keySet()) {
-  //         if (counter == choice) {
-  //           out += key + " ";
-  //         }
-  //         counter++;
-  //       }
-  //     }
-  //     else {
-  //       out += s + " ";
-  //     }
-  //   }
-  //   return out.trim();
+    // String file = textToString(fileName);
+    // String out = "";
+    // for (String s : splice(file, SPACE)) {
+    //   if (s.indexOf("*") != -1) {
+    //     out += randomAdjective() + " ";
+    //   }
+    //   else {
+    //     out += s + " ";
+    //   }
+    // }
+    // return out.trim();
 
     String file = textToString(fileName);
     String out = "";
     // for each element(word) in the arraylist
     for (String s : splice(file, SPACE)) {
       // if word does not have *
-      if(s.indexOf("*") != -1) {
+      if (s.indexOf("*") != -1) {
         // removes *
-        String word = s.substring(1);
+        String punc = getPunctuation(s);
+        String word = removePunctuation(s);
         boolean bias = sentimentVal(word) >= 0;
 
-        if(posneg.equals("positive") && bias || posneg.equals("negative") && !bias) {
-          out+=word+" ";
+        if (posneg.equals("positive") && bias || posneg.equals("negative") && !bias) {
+          out += word + punc + " ";
           continue;
         }
 
-        ArrayList<String> workingList;
+
         if (bias) {
-          workingList = posAdjectives;
+          out += randomPositiveAdj() + punc + " ";
         }
         else {
-          workingList = negAdjectives;
-        }
-
-        int choice = (int) (Math.random() * workingList.size());
-        int counter = 0;
-        // iterates through workingList for the chosen word
-        for (String key : workingList) {
-          if (counter == choice) {
-            out += key + " ";
-          }
-          counter++;
+          out += randomNegativeAdj() + punc + " ";
         }
       }
       // word does not have *
@@ -167,7 +167,7 @@ public class Review {
     return out.trim();
   }
 
-  private static ArrayList<String> splice(String text, String key) {
+  public static ArrayList<String> splice(String text, String key) {
     int indexOfKey = text.indexOf(key);
     ArrayList<String> strs = new ArrayList<String>();
     // if only one word return the word
@@ -182,6 +182,41 @@ public class Review {
       }
     }
     return strs;
+  }
+
+  /**
+    * If string has a duplicate, the second word is removed.
+    * Punctuation is kept.
+    * Returns a string with no duplicate words.
+  */
+  public static String removeDups(String words) {
+    ArrayList<String> spliced = new ArrayList<String>();
+    String out = "";
+    for (String word : splice(words, SPACE)) {
+      String punc = getPunctuation(word);
+      spliced.add(removePunctuation(word));
+      spliced.add(punc);
+    }
+    for (int i = 0; i < spliced.size() - 1; i++) {
+      for (int j = i + 1; j < spliced.size() - 1; j++) {
+        if (spliced.get(i).toLowerCase().equals(spliced.get(j).toLowerCase()) && !isPunctuation(spliced.get(i))) {
+          spliced.remove(j);
+        }
+      }
+    }
+    for (int k = 0; k < spliced.size() - 1; k++) {
+      if (spliced.get(k).equals("")) {
+        continue;
+      }
+      else if (isPunctuation(spliced.get(k + 1))) {
+        out += spliced.get(k);
+      }
+      else {
+        out += spliced.get(k) + " ";
+      }
+    }
+    out += spliced.get(spliced.size() - 1);
+    return out.trim();
   }
 
   /**
@@ -221,6 +256,13 @@ public class Review {
     {
       return 0;
     }
+  }
+
+  public static boolean isPunctuation( String word) {
+    if (word.length() == 1) {
+      return !Character.isAlphabetic(word.indexOf(0));
+    }
+    return false;
   }
 
   /**
