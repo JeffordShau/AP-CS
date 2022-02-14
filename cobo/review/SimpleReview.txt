@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-This was a *terrible restaurant! The pizza crust was too *chewy, and I disliked the pasta. I would definitely not come back. I hate the service here.
-=======
 TNPG: Pumpkin (Jefford Shau, Anthony Sun, Jonathan Song)
 
 This was a *terrible restaurant! The pizza crust was too *chewy, and I disliked the pasta. I would definitely not come back.
->>>>>>> b8b3f39230f320c11ef63639893a28fe27876dd3
