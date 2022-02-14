@@ -26,3 +26,4 @@ Actiivty 2
    b. To fix it, you have to switch the less than sign to the greater than sign.
 
 Activity 3
+3. The indexOf method compares a smaller String to a longer String and returns the index of the first occurrence of the smaller String in the larger String. If the smaller String is not found in the larger String, the return value is -1. The substring method takes indexes as arguments and cuts out a group of characters from a string.
