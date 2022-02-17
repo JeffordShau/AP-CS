@@ -1,6 +1,6 @@
 Pumpkin (Jefford Shau, Jonathan Song, Anthony Sun)
 APCS
-HW65 -- nqueens
+HW65 -- How Mnay Queens Can a Thinker Place, If a THinker Can Place Queens...
 2022-02-16
 time spent: 1 hr
 
@@ -10,3 +10,7 @@ DISCO:
 
 QCC:
 - how can we vary the solutions that the code can generate?
+
+Predictions:
+- 3x3 board cannot place 3 queens
+- 4x4 boards and larger NxN boards can place N Queens. 
