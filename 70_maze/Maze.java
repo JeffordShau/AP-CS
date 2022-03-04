@@ -24,7 +24,7 @@
  * DISCO
  *
  * QCC
- *
+ *  How can we improve our algorithm to show the shortest possible solution?
  ***/
 
 //enable file I/O
