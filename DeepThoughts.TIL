@@ -1,0 +1,22 @@
+JOJO || Orion Roven, Jefford Shau, Joseph Othman
+APCS pd7
+HW69: Making sense make sense
+03-03-22th
+time elapsed: 1hr
+
+Knight’s Tour execution time measurements:
+n=5   2.30s    across 3 executions
+n=6   18.72s    across 3 executions
+n=7   14m    across 2 execution
+n=8   68min    across 1 executions
+
+Q0: From any starting position, an open tour cannot always be found even on solvable sized boards. On a 5x5 board, if the knight starts on the top left then it is solvable, but the computer is unable to solve it when it is in the square to the right of the top left.
+Q1: From any starting position, a closed tour cannot always be found because on a chess board a knight moves from a black square to a white square on every move. If the knight starts on a black square, the next move would flip the color of that square. This means that if there is an odd number of squares, then the starting color would be changed an even number of times. This also means that the last square would be the same color as the starting square. A closed knight’s tour would be impossible because a knight cannot move to a square of the same color. Therefore, a closed tour cannot occur on boards with an odd number of squares.
+Q2: As n increases, 2n-1 squares are added to the board. Each square added to the board gives the board many more possible states of the board. Each additional square causes additional backtracking which exponentially increases the results due to the multiple routes (2-8) possible on each square.
+Q3: Adjusting the order of the recursive function calls (order of the knight’s moves) might change your chances of getting a knight’s tour faster depending on the size of the board.
+
+2. Escaping a maze algo:
+	For each move:
+If you have reached the end, stop. If not, continue.
+If you are able to move forward, move forward until you hit a wall.
+If you are unable to move forward, turn right 90° (basically hug the right wall).
