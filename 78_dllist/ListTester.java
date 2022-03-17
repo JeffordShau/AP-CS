@@ -37,7 +37,7 @@ public class ListTester
 
     System.out.println(wu);
     wu.add("Method Man");
-
+ 
     System.out.println(wu);
 
     for( int i=0; i<7; i++ ) {
