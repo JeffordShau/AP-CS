@@ -4,7 +4,7 @@
 //2022-03-15w
 //time spent: 0.5 hr + class time
 //KtS consumed: 2 sheets
-
+ 
 /***
  * interface List
  * subset of actual Java List interface
