@@ -102,7 +102,7 @@ public class DLLNode
   {
 
     //Below is an exercise in creating a linked list...
-
+ 
     //Create a node
     DLLNode first = new DLLNode( "cat", null, null );
 
