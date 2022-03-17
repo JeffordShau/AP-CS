@@ -11,6 +11,7 @@ DISCO:
 QCC:
   - Why are Doubly-Linked Lists useful?
   - Why did our code remove 2 or 3 items during our first attmept?
+  - Why does attempting to set a prevNode break our remove() algo?
 ALGO ADD:
   - If size 0, create a new DLLNode and point _head to that node
   - Else, traverse to the given index
@@ -18,10 +19,9 @@ ALGO ADD:
   - Set the cargo of the original node to the newVal and set its nextNode to the clone.
 ALGO REM:
   - If index is 0, move the _head pointer over one place to the right
-  - Else, traverse to index-1
+  - Else, traverse index-1
   - Store the cargo in the node of index-1
   - Set the nextNode of the node of index-1 to 2 nodes over.
-  - Set the prevNode of the nextNode of the node of index-1 (if not null) to the node of index-1. 
   - Housekeeping
   - Return stored cargo
 */
@@ -103,10 +103,7 @@ public class LList implements List //interface def must be in this dir
 
 		retStr = (temp.getNext()).getCargo();
 		temp.setNext((temp.getNext()).getNext());
-    if (temp.getNext() != null) {
-      temp.getNext().setPrev(temp);
-    }
-    // temp.getNext().setPrev(temp); // changing prevNode breaks code? why?
+    // temp.getNext().getNext().setPrev(temp); // changing prevNode breaks code? why?
 
     _size--;
 		return retStr;
