@@ -1,13 +1,16 @@
-/**
+```/**
  * This class provides a convenient way to test shuffling methods.
  */
+
+ import java.util.ArrayList;
+
 public class Shuffler {
 
 	/**
 	 * The number of consecutive shuffle steps to be performed in each call
 	 * to each sorting procedure.
 	 */
-	private static final int SHUFFLE_COUNT = 1;
+	private static final int SHUFFLE_COUNT = 5;
 
 
 	/**
@@ -51,6 +54,30 @@ public class Shuffler {
 	 */
 	public static void perfectShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		ArrayList<Integer> jCards = new ArrayList<>();
+		ArrayList<Integer> kCards = new ArrayList<>();
+
+		for(int i=0; i < values.length; i++){
+			if(i < values.length/2){
+				jCards.add(values[i]);
+			}else{
+				kCards.add(values[i]);
+			}
+		}
+
+		int jCounter = 0;
+		int kCounter = 0;
+
+		for(int e=0; e < values.length; e++){
+			if(e%2 == 0){
+				values[e] = jCards.get(jCounter);
+				jCounter++;
+			}else{
+				values[e] = kCards.get(kCounter);
+				kCounter++;
+			}
+		}
+
 	}
 
 	/**
@@ -66,5 +93,21 @@ public class Shuffler {
 	 */
 	public static void selectionShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		int[] shuffle = new int[values.length];
+		int j;
+
+		for(int k = 0; k < values.length; k++){
+			j = (int) (Math.random()*(values.length));
+			while((values[j] == -1)){
+				j = (int) (Math.random()*(values.length));
+			}
+			shuffle[k] = values[j];
+			values[j] = -1;
+
+		}
+
+		for(int i=0; i<shuffle.length; i++){
+			values[i] = shuffle[i];
+		}
 	}
-}
+}```
