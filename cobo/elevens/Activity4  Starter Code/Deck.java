@@ -63,6 +63,29 @@ public class Deck {
 	 */
 	public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		// List<Card> temp = new ArrayList(size());
+		// int tempSize = ((ArrayList)temp).size();
+		// for (int k = 0; k < tempSize; k++) {
+		// 	while (temp.get(k) == null) {
+		// 		int i = (int) (Math.random() * tempSize);
+		// 		if (cards.get(i) != null) {
+		// 			temp.set(k, cards.get(i));
+		// 			cards.set(i, null);
+		// 			size--;
+		// 		}
+		// 	}
+		// }
+		// cards = temp;
+		// size = tempSize;
+		for (int k = cards.size() - 1; k > 0; k--) {
+            int r = (int) (Math.random() * (k + 1));
+            Card temp = cards.get(r);
+            cards.set(r, cards.get(k));
+            cards.set(k, temp);
+        }
+        size = cards.size();
+
+
 	}
 
 	/**
