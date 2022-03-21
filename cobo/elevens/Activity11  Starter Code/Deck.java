@@ -1,4 +1,16 @@
-import java.util.List;
+//(P)BNJ -- Brian Li, Jefford Shau, Nakib Abedin
+//APCS pd07
+//L07 - But These Go Up To Eleven
+//2022-03-20
+//time spent: 2.0 hr + class time
+
+/*
+DISCO
+- Use "" or  \ before a space character to traverse through a dir with spaces in its name.
+
+QCC
+- Why would we want to use List<> var = new ArrayList() instead of ArrayList<> var = new ArrayList()?
+*/import java.util.List;
 import java.util.ArrayList;
 
 /**
