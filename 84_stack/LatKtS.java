@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 //(P)BNJ -- Brian Li, Jefford Shau, Nakib Abedin
 //APCS pd07
 //HW84 - Stack: What Is It Good For?
@@ -15,7 +13,6 @@ QCC:
   - why did we need to use peek() in our code? wouldn't the code work fine without it?
   */
 
->>>>>>> e2bc102ea92c555dbf7084714d1672c6fcd7ff20
 /***
  * class LatKtS
  * SKELETON
@@ -53,12 +50,6 @@ public class LatKtS
    **/
   public static boolean allMatched( String s )
   {
-<<<<<<< HEAD
-    final String opening = "{([";
-    final String ending  = "])}";
-    
-  }
-=======
     /*
     1) add s.substring(j,j+1) to stack if its an opening.
     2) if you encounter a closing, then peek the stack and the item should match the closing
@@ -87,16 +78,11 @@ public class LatKtS
     return true;
   } // close allMatched
 
->>>>>>> e2bc102ea92c555dbf7084714d1672c6fcd7ff20
 
 
   //main method to test
   public static void main( String[] args )
   {
-<<<<<<< HEAD
-    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
-=======
->>>>>>> e2bc102ea92c555dbf7084714d1672c6fcd7ff20
     System.out.println(flip("stressed"));
     System.out.println(allMatched( "({}[()])" )); //true
     System.out.println(allMatched( "([)]" ) ); //false
@@ -104,11 +90,8 @@ public class LatKtS
     System.out.println(allMatched( "](){([])}" ) ); //false
     System.out.println(allMatched( "(){([])}(" ) ); //false
     System.out.println(allMatched( "()[[]]{{{{((([])))}}}}" ) ); //true
-<<<<<<< HEAD
-=======
     /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
 
->>>>>>> e2bc102ea92c555dbf7084714d1672c6fcd7ff20
       ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
   }
 
