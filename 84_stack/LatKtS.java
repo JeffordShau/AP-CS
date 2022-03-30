@@ -1,3 +1,21 @@
+<<<<<<< HEAD
+=======
+//(P)BNJ -- Brian Li, Jefford Shau, Nakib Abedin
+//APCS pd07
+//HW84 - Stack: What Is It Good For?
+//2022-03-29r
+//time spent: class time + 1.0 hrs
+
+/*
+DISCO:
+  - peek() will show you the item at the top of the stack without removing it
+  - stacks can be useful for String reversal and matching brackets
+  - _stackSize---1 decreases _stackSize by 1 while also subtracting 1
+QCC:
+  - why did we need to use peek() in our code? wouldn't the code work fine without it?
+  */
+
+>>>>>>> e2bc102ea92c555dbf7084714d1672c6fcd7ff20
 /***
  * class LatKtS
  * SKELETON
@@ -35,16 +53,50 @@ public class LatKtS
    **/
   public static boolean allMatched( String s )
   {
+<<<<<<< HEAD
     final String opening = "{([";
     final String ending  = "])}";
     
   }
+=======
+    /*
+    1) add s.substring(j,j+1) to stack if its an opening.
+    2) if you encounter a closing, then peek the stack and the item should match the closing
+    3) if it doesn't match, then its automatically false. else, pop stack.
+    4) if it goes the whole way without a single mismatch and the stack is empty, then all the brackets match
+    */
+
+    final String opening = "{([";
+
+    Latkes stackOpenings = new Latkes(s.length());
+
+    for(int j = 0; j < s.length(); j++){ // populate the stack with the String
+      String paren = s.substring(j, j+1);
+      if (opening.indexOf(paren) > -1 ){ // checks if the character is an opening bracket
+        stackOpenings.push(paren);
+      }
+      else if (stackOpenings.isEmpty()) { return false; } // checks for if ending brackets more than opening brackets
+      else if ( ((paren.equals(")") && stackOpenings.peek().equals("("))) ||
+                ((paren.equals("]") && stackOpenings.peek().equals("["))) ||
+                ((paren.equals("}") && stackOpenings.peek().equals("{"))) ){
+        stackOpenings.pop(); // remove matching opening brackets
+      }
+      else { return false; }
+    } // close for loop
+    if (!stackOpenings.isEmpty()){ return false; } // extra check for if opening brackets more than ending brackets
+    return true;
+  } // close allMatched
+
+>>>>>>> e2bc102ea92c555dbf7084714d1672c6fcd7ff20
 
 
   //main method to test
   public static void main( String[] args )
   {
+<<<<<<< HEAD
     /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
+=======
+>>>>>>> e2bc102ea92c555dbf7084714d1672c6fcd7ff20
     System.out.println(flip("stressed"));
     System.out.println(allMatched( "({}[()])" )); //true
     System.out.println(allMatched( "([)]" ) ); //false
@@ -52,6 +104,11 @@ public class LatKtS
     System.out.println(allMatched( "](){([])}" ) ); //false
     System.out.println(allMatched( "(){([])}(" ) ); //false
     System.out.println(allMatched( "()[[]]{{{{((([])))}}}}" ) ); //true
+<<<<<<< HEAD
+=======
+    /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
+
+>>>>>>> e2bc102ea92c555dbf7084714d1672c6fcd7ff20
       ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
   }
 

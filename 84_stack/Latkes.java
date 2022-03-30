@@ -45,6 +45,16 @@ public class Latkes
     return retStr;
   }
 
+<<<<<<< HEAD
+=======
+  //look at top of stack
+  public String peek()
+  {
+    if ( isEmpty() )  return null;
+    return _stack[_stackSize-1];
+  }
+
+>>>>>>> e2bc102ea92c555dbf7084714d1672c6fcd7ff20
 
   //chk for emptiness
   public boolean isEmpty()
