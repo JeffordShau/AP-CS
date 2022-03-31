@@ -1,10 +1,24 @@
+//(P)BNJ -- Brian Li, Jefford Shau, Nakib Abedin
+//APCS pd07
+//HW84 - Leon Leonwood Stack
+//2022-03-30r
+//time spent: 0.4 hrs + class time
+
+/*
+DISCO
+- LLStack and ALStack can function by using the same methods for their respective classes.
+- implementing Stack without parameters does not implement our local Stack, which IS parameterized.
+QCC
+- What is the benefit of using the built-in LinkedList over ArrayList, and vice-versa?
+*/
+
 /***
- * class Latkes
+ * class ALStack
  * v1
- * Implements a stack of Strings using an encapsulated array
+ * Implements a stack of PANCAKES using an encapsulated ArrayList
  **/
 
- import java.util.ArrayList;
+import java.util.ArrayList;
 
 public class ALStack<PANCAKE> implements Stack<PANCAKE>
 {
