@@ -1,4 +1,18 @@
 /*
+(P)BNJ -- Nakib Abedin + Jefford Shau + Brian Li
+APCS pd07
+HW88 --  BPC Kiddies Do Not Wait in Line Either
+2022-04-04
+
+DISCO
+1) You can have O(1) enqueue and dequeue methods (when adding to the back and removing from the front) if you strcuture your queue properly
+
+QCC:
+1) Should we have kept our dequeue O(1) and altered our sample to be O(n)?
+
+*/
+
+/*
  * class RQueue
  * SKELETON
  * A node-based, randomized queue
@@ -30,7 +44,7 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
   }
 
 
-  public void enqueue( T enQVal )
+  public void enqueue( SWASHBUCKLE enQVal )
   {
     if ( isEmpty() ) {
       _front = _end = new LLNode<SWASHBUCKLE>( enQVal, null );
@@ -41,59 +55,71 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
     }
     _size++;
     System.out.println("enqueued " + enQVal);
-  }//O(?)
+  }//O(1)
 
 
-  // remove and return thing at front of queue
+  // remove and return random thing
   // assume _queue ! empty
-  public T dequeue()
+  public SWASHBUCKLE dequeue()
   {
-    int random = (int) Math.random() * _size;
-    _front = _front.getNext();
-    LLNode<SWASHBUCKLE> _tmp = _front;
-    if ( _front == null ) //just moved past last node
-      _end = null;      //update _end to reflect emptiness
-    for (int i = 0; i < random -1; i++) {
-      _tmp = _tmp.getNext();
+    SWASHBUCKLE retVal;
+    if (_size == 1) {
+      retVal = _front.setCargo(null);
+      _size--;
     }
-    SWASHBUCKLE retVal = _tmp.getNext().getCargo();
-    _tmp.setNext(_tmp.getNext().getNext());
-    _size--;
-
+    else {
+      int random = (int) (Math.random() * _size);
+      // _front = _front.getNext();
+      LLNode<SWASHBUCKLE> _tmp = _front;
+      for (int i = 0; i < random -1; i++) {
+        _tmp = _tmp.getNext();
+      }
+      retVal = _tmp.getNext().getCargo();
+      _tmp.setNext(_tmp.getNext().getNext());
+      _size--;
+    }
     return retVal;
-  }//O(?)
+  }//O(n)
 
 
-  public T peekFront()
+  public SWASHBUCKLE peekFront()
   {
     return _front.getCargo();
-  }//O(?)
+  }//O(1)
 
 
   /***
    * void sample() -- a means of "shuffling" the queue
    * Algo:
-   *   < YOUR SUCCINCT SUMMARY HERE >
+   *   For each iteration _size-1 times:
+   *     - Dequeue a random item
+   *     - Enqueue the returned value from the dequeue
    **/
   public void sample ()
   {
     for (int i = 0; i < _size; i++) {
-      int idx = (int) Math.random() * _size;
-
+      this.enqueue(this.dequeue());
     }
-  }//O(?)
+  }//O(n^2) because dequeue() is O(n)
 
 
   public boolean isEmpty()
   {
     return _front == null;
-  } //O(?)
+  } //O(1)
 
 
   // print each node, separated by spaces
   public String toString()
   {
-
+    String retStr = "FRONT :: ";
+    LLNode<SWASHBUCKLE> tmp = _front; //init tr
+    while( tmp != null ) {
+      retStr += tmp.getCargo() + " ";
+      tmp = tmp.getNext();
+    }
+    retStr += " :: END";
+    return retStr;
   }//end toString()
 
 
@@ -101,8 +127,6 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
   //main method for testing
   public static void main( String[] args )
   {
-
-      /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
 
     Queue<String> PirateQueue = new RQueue<String>();
 
@@ -119,16 +143,22 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
 
     System.out.println("\nnow dequeuing...");
     System.out.println( PirateQueue.dequeue() );
+    // System.out.println( PirateQueue.toString());
     System.out.println( PirateQueue.dequeue() );
+    // System.out.println( PirateQueue.toString());
     System.out.println( PirateQueue.dequeue() );
+    // System.out.println( PirateQueue.toString());
     System.out.println( PirateQueue.dequeue() );
+    // System.out.println( PirateQueue.toString());
     System.out.println( PirateQueue.dequeue() );
+    // System.out.println( PirateQueue.toString());
     System.out.println( PirateQueue.dequeue() );
+    // System.out.println( PirateQueue.toString());
 
     System.out.println("\nnow dequeuing fr empty queue...\n" +
                        "(expect NPE)\n");
     System.out.println( PirateQueue.dequeue() );
-
+  /*v~~~~~~~~~~~~~~MAKE MORE~~~~~~~~~~~~~~v
       ^~~~~~~~~~~~~~~~AWESOME~~~~~~~~~~~~~~~^*/
 
   }//end main
