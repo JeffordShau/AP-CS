@@ -98,8 +98,9 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
   public void sample ()
   {
     for (int i = 0; i < _size; i++) {
-      this.enqueue(this.dequeue());
+      this.enqueue( this.dequeue() );
     }
+    System.out.println( this.peekFront() );
   }//O(n^2) because dequeue() is O(n)
 
 
