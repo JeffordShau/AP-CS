@@ -33,10 +33,10 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
   public void enqueue( T enQVal )
   {
     if ( isEmpty() ) {
-      _front = _end = new LLNode<PIKACHU>( enQVal, null );
+      _front = _end = new LLNode<SWASHBUCKLE>( enQVal, null );
     }
     else {
-      _end.setNext( new LLNode<PIKACHU>( enQVal, null ) );
+      _end.setNext( new LLNode<SWASHBUCKLE>( enQVal, null ) );
       _end = _end.getNext();
     }
     _size++;
@@ -50,13 +50,13 @@ public class RQueue<SWASHBUCKLE> implements Queue<SWASHBUCKLE>
   {
     int random = (int) Math.random() * _size;
     _front = _front.getNext();
-    LLNode<PIKACHU> _tmp = _front;
+    LLNode<SWASHBUCKLE> _tmp = _front;
     if ( _front == null ) //just moved past last node
       _end = null;      //update _end to reflect emptiness
     for (int i = 0; i < random -1; i++) {
       _tmp = _tmp.getNext();
     }
-    PIKACHU retVal = _tmp.getNext().getCargo();
+    SWASHBUCKLE retVal = _tmp.getNext().getCargo();
     _tmp.setNext(_tmp.getNext().getNext());
     _size--;
 
