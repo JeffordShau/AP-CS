@@ -3,6 +3,7 @@
 APCS pd07
 HW88 --  BPC Kiddies Do Not Wait in Line Either
 2022-04-04
+time spent: 0.3 hr + class time
 
 DISCO
 1) You can have O(1) enqueue and dequeue methods (when adding to the back and removing from the front) if you strcuture your queue properly
