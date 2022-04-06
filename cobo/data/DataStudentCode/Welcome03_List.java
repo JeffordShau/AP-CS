@@ -29,5 +29,9 @@ public class Welcome03_List {
             System.out.println("  " + ws.getId() + ": " + ws.getName());
          }
       }
+
+      for (WeatherStation station : allstns){
+        if ()
+      }
    }
 }
