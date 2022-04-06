@@ -20,7 +20,7 @@ QCC
 - Use fetchFloat() method to extract and return information from servers in dataType float.
 - Use fetchString() method to extract and return information from servers in dataType String.
 - Use fetch() method to extract and return multiple information from servers at once.
-- - Use fetchList() method to extract and return information from servers in a list.
+- Use fetchList() method to extract and return information from servers in a list.
 
 
 TRUBZ
