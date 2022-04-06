@@ -17,6 +17,8 @@ public class Welcome02_Object {
       Observation ob1 = ds1.fetch("Observation", "weather", "temp_f", "wind_degrees");
       System.out.println(id1 + ": " + ob1);
 
+      // KATL: 71.0 degrees; Light Drizzle Fog/Mist (wind: 210 degrees)
+
       String id2 = "KSAV";
       DataSource ds2 = DataSource.connect("http://weather.gov/xml/current_obs/" + id2 + ".xml");
       ds2.setCacheTimeout(15 * 60);
@@ -24,6 +26,8 @@ public class Welcome02_Object {
 
       Observation ob2 = ds2.fetch("Observation", "weather", "temp_f", "wind_degrees");
       System.out.println(id2 + ": " + ob2);
+
+      // KSAV: 83.0 degrees; Mostly Cloudy (wind: 230 degrees)
 
       String id3 = "KNYC";
       DataSource ds3 = DataSource.connect("http://weather.gov/xml/current_obs/" + id3 + ".xml");
@@ -33,6 +37,8 @@ public class Welcome02_Object {
 
       Observation ob3 = ds3.fetch("Observation", "weather", "temp_f", "wind_degrees");
       System.out.println(id3 + ": " + ob3);
+
+      // KNYC: 50.0 degrees; Overcast (wind: 60 degrees)
 
       if (ob3.colderThan(ob2)) {
         if (ob3.colderThan(ob1)){
@@ -51,6 +57,7 @@ public class Welcome02_Object {
         }
       }
 
+      // Colder at KNYC
 
    }
 }
