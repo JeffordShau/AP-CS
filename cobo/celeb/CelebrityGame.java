@@ -51,7 +51,16 @@ public class CelebrityGame
 	 */
 	public boolean processGuess(String guess)
 	{
-		return false;
+		guess = guess.trim();
+		if (guess.equalsIgnoreCase(gameCelebrity.getAnswer())){
+			celebGameList.remove(0);
+		}
+		if (getCelebrityGameSize() > 0){
+			gameCelebrity = celebGameList(0);
+		}
+		else{
+			gameCelebrity = new Celebrity("", "");
+		}
 	}
 
 	/**
@@ -61,7 +70,10 @@ public class CelebrityGame
 	 */
 	public void play()
 	{
-
+		if (celebGameList != null && celebGameList.size() > 0) {
+			this.gameCelebrity =  celebGameList.get(0);
+			gameWindow.replaceScreen("GAME");
+		}
 	}
 
 	/**
@@ -112,7 +124,7 @@ public class CelebrityGame
 	 */
 	public int getCelebrityGameSize()
 	{
-		return 0;
+		return celebGameList.size();
 	}
 
 	/**
