@@ -2,9 +2,9 @@
 // APCS pd07
 // L09 - Some Folks Call It A Charades
 // 2022-04-26
-// time spent: 0.7 hrs + class time
+// time spent: 1.2 hrs + class time
 
-package celeb;
+// package celeb;
 import java.util.ArrayList;
 
 public class SportsCelebrity extends Celebrity{
