@@ -1,3 +1,11 @@
+// Team (P)BNJ - Brian Li, Nakib Abedin, Jefford Shau
+// APCS pd07
+// L09 - Some Folks Call It A Charades
+// 2022-04-26
+// time spent: 0.7 hrs + class time
+
+package celeb;
+
 import java.util.ArrayList;
 
 /**
@@ -51,16 +59,19 @@ public class CelebrityGame
 	 */
 	public boolean processGuess(String guess)
 	{
+		boolean isMatch = false;
 		guess = guess.trim();
 		if (guess.equalsIgnoreCase(gameCelebrity.getAnswer())){
 			celebGameList.remove(0);
+			isMatch = true;
 		}
 		if (getCelebrityGameSize() > 0){
-			gameCelebrity = celebGameList(0);
+			gameCelebrity = celebGameList.get(0);
 		}
 		else{
 			gameCelebrity = new Celebrity("", "");
 		}
+		return isMatch;
 	}
 
 	/**
@@ -88,8 +99,18 @@ public class CelebrityGame
 	 */
 	public void addCelebrity(String name, String guess, String type)
 	{
+		Celebrity currentCelebrity;
 		if (validateCelebrity(name) && validateClue(guess, type)) {
-			celebGameList.add(new Celebrity(name, guess));
+			if (type.equals("Literature")){
+				currentCelebrity = new LiteratureCelebrity(name, guess);
+			}
+			else if (type.equals("Sports")){
+				currentCelebrity = new SportsCelebrity(name, guess);
+			}
+			else {
+				currentCelebrity = new Celebrity(name, guess);
+			}
+			this.celebGameList.add(currentCelebrity);
 		}
 	}
 
@@ -113,8 +134,21 @@ public class CelebrityGame
 	 */
 	public boolean validateClue(String clue, String type)
 	{
-		clue = clue.trim();
-		return clue.length() >= 10;
+		boolean validClue = false;
+		if (clue.trim().length() >= 10){
+			validClue = true;
+			if (type.equalsIgnoreCase("literature")){
+				String[] temp = clue.split(",");
+				if (temp.length > 1){ validClue = true; }
+				else { validClue = false; }
+			}
+			else if (type.equalsIgnoreCase("sports")){
+				String[] temp = clue.split(",");
+				if (temp.length > 1){ validClue = true; }
+				else { validClue = false; }
+			}
+		}
+		return validClue;
 	}
 
 	/**
@@ -135,7 +169,8 @@ public class CelebrityGame
 	 */
 	public String sendClue()
 	{
-		return null;
+		if (celebGameList.size() == 0){ return ""; }
+		return gameCelebrity.getClue();
 	}
 
 	/**
@@ -146,6 +181,7 @@ public class CelebrityGame
 	 */
 	public String sendAnswer()
 	{
-		return null;
+		if (celebGameList.size() == 0){ return ""; }
+		return gameCelebrity.getAnswer();
 	}
 }
