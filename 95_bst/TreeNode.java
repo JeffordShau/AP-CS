@@ -1,3 +1,18 @@
+// (P)BNJ: Jefford Shau, Nakib Abedin, Brian Li
+// APCS pd07
+// HW95 -- Algorithm as Data Structure
+// 2022-05-09m
+// time spent: 1.0 hrs + classtime
+
+/*
+DISCO
+1) We used the helper methods to set up the recursion and the main method to call the recursion.
+
+QCC
+1) How do you know which node to insert a node in a binary search tree (there are multiple valid locations)?
+2) Does height indexing begin at 0 or at 1?
+*/
+
 /**
  * class TreeNode
  * SKELETON
