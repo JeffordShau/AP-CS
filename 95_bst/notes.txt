@@ -1,0 +1,11 @@
+
+
+
+
+
+
+With L = level, d = depth, h = height…
+
+    a perfect binary tree has _____ nodes
+    at each level, a perfect binary tree has _____ nodes
+    height of a complete binary tree w/ n nodes is _____
