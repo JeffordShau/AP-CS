@@ -1,4 +1,19 @@
-/**
+// (P)BNJ -- Brian Li, Nakib Abedin, Jefford Shau
+// APCS pd07
+// HW96 -- BSTs is the Perfect Place for Shade
+// 2022-05-11w
+// Time Spent: 1.0 hrs
+
+/*
+  DISCOS
+  1. We can code the method for search both recursively and iteratively. Both mehtods yield O(logn)
+
+  QCC
+  1. Were we meant to do the search method recursively or iteratively?
+  2. What are binary search trees useful for?
+
+*/
+/** 
  * class BST
  * v1:partial
  * SKELETON
@@ -64,11 +79,6 @@ public class BST
   }//end insert()
 
 
-
-
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  //~~~~~~~~~~~~~v~~TRAVERSALS~~v~~~~~~~~~~~~~~~~~~~~~
-
   // each traversal should simply print to standard out
   // the nodes visited, in order
 
@@ -125,37 +135,20 @@ public class BST
   *****************************************************/
   TreeNode search( int target )
   {
-    TreeNode newNode = new TreeNode(target);
-    return search(_root, newNode);
-  }
-
-  TreeNode search(TreeNode stRoot, TreeNode target){
-    if (target.getValue() == stRoot.getValue()){
-      return stRoot;
+    TreeNode output = new TreeNode(target);
+    TreeNode tmp = _root;
+    while(tmp != null){
+      if(tmp.getValue() ==  output.getValue()){
+        output = tmp;
+        return output;
+      }else if(tmp.getValue() > output.getValue()){
+        tmp = tmp.getLeft();
+      }else{
+        tmp = tmp.getRight();
+      }
     }
-    else{
-      if (target.getValue() )
-    }
-
-    // if ( newNode.getValue() < stRoot.getValue() ) {
-    //   //if no left child, make newNode the left child
-    //   if ( stRoot.getLeft() == target.getValue() ){
-    //     return stRoot;
-    //   }
-    //   else //recurse down left subtree
-    //     search( stRoot.getLeft(), newNode );
-    //   return null;
-    // }
-    // else { // new val >= curr, so look down right subtree
-    //   //if no right child, make newNode the right child
-    //   if ( stRoot.getRight() == target.getValue() )
-    //     return stRoot;
-    //   else //recurse down right subtree
-    //     search(stRoot.getRight(), newNode);
-    //   return null;
-    // }
+    return null;
   }
-
 
   /*****************************************************
   * int height()
@@ -165,6 +158,26 @@ public class BST
   public int height()
   {
     /*** YOUR IMPLEMENTATION HERE ***/
+    return height(_root);
+  
+  }
+
+  private int height(TreeNode t){
+    //TreeNode tmp = t;
+    if(t.getLeft() == null && t.getRight() == null){ // base case
+      return 1;
+    }else if(t.getRight() != null && t.getLeft() != null){
+      if( height(t.getLeft()) > height(t.getRight()) )
+        return height(t.getLeft()) + 1;
+      if( height(t.getLeft()) < height(t.getRight()) )
+        return height(t.getRight()) + 1;
+    }else{
+      if(t.getRight() == null)
+        return height(t.getLeft()) + 1;
+      else
+        return height(t.getRight()) + 1;
+    }
+    return -1;
   }
 
 
@@ -175,8 +188,21 @@ public class BST
   public int numLeaves()
   {
     /*** YOUR IMPLEMENTATION HERE ***/
+    return numLeaves(_root);
   }
 
+  private int numLeaves(TreeNode stRoot){
+    if ( stRoot.getLeft() == null && stRoot.getRight() == null ) // definition of a leaf
+      return 1;
+    else if(stRoot.getRight() != null && stRoot.getLeft() != null)
+      return numLeaves(stRoot.getRight()) + numLeaves(stRoot.getLeft());
+    else{
+      if(stRoot.getRight() == null)
+        return numLeaves(stRoot.getLeft());
+      else
+      return numLeaves(stRoot.getRight());
+    }
+  }
 
 
 
@@ -196,6 +222,8 @@ public class BST
     arbol.insert( 6 );
     arbol.insert( 1 );
     arbol.insert( 3 );
+    
+
 
     System.out.println( "\n-----------------------------");
     System.out.println( "pre-order traversal:" );
@@ -210,10 +238,20 @@ public class BST
     arbol.postOrderTrav();
 
     System.out.println( "\n-----------------------------");
-    /*~~~~~~~~~~~~move~me~down~~~~~~~~~~~~~~~~~~~~~~
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
+    System.out.println();
 
+    System.out.println(arbol.search(7)); // should return null
+    System.out.println((arbol.search(4)).getValue()); // should return 4
+
+    System.out.println(arbol.height()); // should return 3
+    arbol.insert(8);
+    System.out.println(arbol.height()); // should return 4
+
+    System.out.println(arbol.numLeaves()); // should return 3
+    arbol.insert(7);
+    arbol.insert(9);
+    System.out.println(arbol.numLeaves()); // should return 4
 
     /**
        EXPECTED OUTPUT:
