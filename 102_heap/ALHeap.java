@@ -1,3 +1,19 @@
+/*
+(P)BNJ -- Brian Li, Nakib Abedin, Jefford Shau
+APCS pd07
+HW102 -- Heap On Heapin' On
+2022-05-18w
+Time Spent: 1.2 hrs + classtime
+
+DISCO:
+1) A heap can be represented in the form of an ArrayList
+2) The index of the parent can be represented as (pos - 1)/2 and the index of the left and right child is 2pos+1 and 2pos+2 respectively.
+QCC:
+1) In order to have it so that a level order traversal can produce a unique heap by itself, we think it is neccessary that it is a given that the heap is balanced.
+
+*/
+import java.util.ArrayList;
+
 /**
  * class ALHeap
  * SKELETON
@@ -32,7 +48,7 @@ public class ALHeap
   {
     String output = "";
     for(int i : _heap) {
-      output += i;
+      output = output + i + " ";
     }
     return output;
   }//O(n)
@@ -64,12 +80,24 @@ public class ALHeap
    * Inserts an element in the heap
    * Postcondition: Tree exhibits heap property.
    * ALGO:
-   * <your clear && concise procedure here>
+   * 1) Add addVal to _heap
+   * 2) Compare addVal, with the item at index (pos-1)/2
+   * 3) If lesser, swap and go back to step 3
+   * 4) If greater, then the ArrayList will once again be a heap
    */
   public void add( Integer addVal )
   {
-
-  }//O(n)
+    int curr = _heap.size(); // current position of addVal
+    _heap.add(addVal);
+    while(curr > -1){
+      if(addVal >= _heap.get((curr-1)/2)){ // the equal takes care of the case in which _heap is empty
+        break;
+      }else{
+        swap(curr, (curr-1)/2); // swap parent and addVal
+        curr = (curr-1)/2;
+      }
+    }
+  }//O(log n)
 
 
   /**
@@ -77,12 +105,50 @@ public class ALHeap
    * Removes and returns least element in heap.
    * Postcondition: Tree maintains heap property.
    * ALGO:
-   * <your clear && concise procedure here>
+   * 0) Use a curr to keep track of position.
+   * 1) Swap the values at the first and last indices
+   * 2) Store and remove the last element in _heap
+   * 3) If the root isn't less than both its children, swap it with the lesser valued child.
+   * 4) Repeat until root node is either less than all its children or has no children at all
    */
   public Integer removeMin()
   {
+    int output;
+    int curr = 0;
 
-  }//O(?)
+    swap(0,_heap.size()-1);
+    output = _heap.remove(_heap.size()-1);
+
+    while(curr < _heap.size()){
+      if(2 * curr + 1 < _heap.size() && 2 * curr + 2 < _heap.size()){
+        if(_heap.get(curr) < _heap.get(2*curr +1) && _heap.get(curr) < _heap.get(2*curr +2)){
+          return output;
+        }else{
+          int temp = minChildPos(curr);
+          swap(curr, minChildPos(curr));
+          curr = temp;
+        }
+      }else if(2 * curr + 1 < _heap.size()){
+        if(_heap.get(curr) < _heap.get(2*curr +1)){
+          return output;
+        }else{
+          swap(curr, 2*curr +1);
+          curr = 2*curr+1;
+        }
+      }else if(2 * curr + 2 < _heap.size()){
+        if(_heap.get(curr) < _heap.get(2*curr +2)){
+          return output;
+        }else{
+          swap(curr, 2*curr +2);
+          curr = 2*curr+2;
+        }
+      }else
+        return output;
+
+    }
+
+    return output;
+  }//O(log n)
 
 
   /**
@@ -93,10 +159,21 @@ public class ALHeap
    */
   private int minChildPos( int pos )
   {
-    int idx = 0;
-    if (_heap.get(2 * pos + 1) != null && _heap.get(2 * pos + 2) != null) 
-    if (_heap.get(pos) > _heap.get(2 * pos + 1))
-  }//O(?)
+    if (2 * pos + 1 < _heap.size() && 2 * pos + 2 < _heap.size()){
+      if (_heap.get(2* pos + 1) > _heap.get(2 * pos + 2))
+        return 2* pos + 2;
+      else
+        return 2 * pos + 1;
+    }else if (2 * pos + 1 < _heap.size()){
+      return 2* pos + 1;
+    }else if (2 * pos + 2 < _heap.size()){
+      return 2 * pos + 2;
+    }else{
+      return -1;
+    }
+
+
+  }//O(1)
 
 
   //~~~~~~~~~~~~~ aux helper fxns ~~~~~~~~~~~~~~
@@ -120,8 +197,8 @@ public class ALHeap
   //main method for testing
   public static void main( String[] args )
   {
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
       ALHeap pile = new ALHeap();
+
 
       pile.add(2);
       System.out.println(pile);
@@ -144,6 +221,7 @@ public class ALHeap
       pile.add(9);
       System.out.println(pile);
 
+
       System.out.println("removing " + pile.removeMin() + "...");
       System.out.println(pile);
       System.out.println("removing " + pile.removeMin() + "...");
@@ -166,6 +244,8 @@ public class ALHeap
       System.out.println(pile);
       System.out.println("removing " + pile.removeMin() + "...");
       System.out.println(pile);
+      /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
   }//end main()
 
